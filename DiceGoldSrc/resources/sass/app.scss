@@ -1,8 +1,35 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+//// Fonts
+//@import url('https://fonts.googleapis.com/css?family=Nunito');
+//
+//// Variables
+//@import 'variables';
+//
+//// Bootstrap
+//@import '~bootstrap/scss/bootstrap';
 
-// Variables
-@import 'variables';
+main{
+  margin-top: 5rem !important;
+}
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+.navbar-header a.button{
+  color: #e9ecef;
+  border: 1px solid #e9ecef;
+  border-radius: 2px;
+  padding: 6px 10px;
+}
+
+.navbar-brand-box a{
+  color: #e9ecef;
+  font-weight: bold;
+}
+
+@media (min-width: 720px) {
+  .modal-dialog-scrollable {
+    max-height: calc(100% - 3.5rem);
+  }
+
+  .modal-dialog {
+    max-width: 640px;
+    margin: 1.75rem auto;
+  }
+}

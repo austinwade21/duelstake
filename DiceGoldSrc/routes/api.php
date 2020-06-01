@@ -17,3 +17,25 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+/*
+|-------------------------------------------------------------------------------
+| Updates a User's Profile
+|-------------------------------------------------------------------------------
+| URL:            /user/changePassword
+| Controller:     UsersController@changePassword
+| Method:         POST
+| Description:    Updates the authenticated user's profile
+*/
+Route::middleware('auth:api')->post('/user/changePassword', 'UsersController@changePassword');
+
+/*
+|-------------------------------------------------------------------------------
+| Updates a User's Profile
+|-------------------------------------------------------------------------------
+| URL:            /user/changePassword
+| Controller:     UsersController@changePassword
+| Method:         POST
+| Description:    Updates the authenticated user's profile
+*/
+Route::middleware('auth:api')->get('/user/getUserSettings','UsersController@getUserSettings');
