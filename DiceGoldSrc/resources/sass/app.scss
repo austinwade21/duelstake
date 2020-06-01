@@ -11,6 +11,10 @@ main{
   margin-top: 5rem !important;
 }
 
+body[data-topbar=dark] #page-topbar{
+  background-color: #282e3f;
+}
+
 .navbar-header a.button{
   color: #e9ecef;
   border: 1px solid #e9ecef;
@@ -23,6 +27,32 @@ main{
   font-weight: bold;
 }
 
+.modal.show .modal-dialog{
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.center-button{
+  text-align: center;
+}
+
+.static-message{
+  border-radius: 2px;
+  background-color: #2b3244;
+  padding: 4px 8px;
+}
+
+.dynamic-message{
+  border-radius: 2px;
+  background-color: rgba(245,166,35,.2);
+  border: solid 1px #f5a623;
+  color: #f5a623;
+  padding: 4px 8px;
+}
+
+form{
+  margin-top: 20px;
+}
 @media (min-width: 720px) {
   .modal-dialog-scrollable {
     max-height: calc(100% - 3.5rem);

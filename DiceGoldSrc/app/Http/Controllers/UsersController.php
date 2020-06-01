@@ -4,6 +4,11 @@
 namespace App\Http\Controllers;
 
 
+use App\Rules\MatchOldPassword;
+use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 class UsersController extends Controller
 {
     /**
@@ -25,8 +30,18 @@ class UsersController extends Controller
     | Method:         post
     | Description:    Updates the authenticated user's password
     */
-    public function changePassword(){
+    public function changePassword(Request $request){
+        $request->validate([
+            'current_password' => ['required', new MatchOldPassword],
+            'new_password' => ['required'],
+//            'new_confirm_password' => ['same:new_password'],
+        ]);
 
+        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+        return response()->json([
+            'name' => 'Password change successfully.',
+            'state' => 'success'
+        ]);
     }
 
     /*
