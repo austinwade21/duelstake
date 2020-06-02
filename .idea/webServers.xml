@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="a3b35058-b582-4674-b3b9-17ee8523429e" name="DiceGold" url="http://51.75.73.157">
-        <fileTransfer host="51.75.73.157" port="22" rootFolder="/home/dicegold" accessType="SFTP">
+      <webServer id="a3b35058-b582-4674-b3b9-17ee8523429e" name="DiceGold" url="http://dicegold.com">
+        <fileTransfer host="185.169.198.214" port="22" rootFolder="/home/dicegold" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

@@ -26,7 +26,7 @@ class UsersController extends Controller
     | Updates a User's Profile
     |-------------------------------------------------------------------------------
     | Using API
-    | URL:            /user/changePassword
+    | URL:            /api/user/changePassword
     | Method:         post
     | Description:    Updates the authenticated user's password
     */
@@ -49,12 +49,20 @@ class UsersController extends Controller
     | Updates a User's Profile
     |-------------------------------------------------------------------------------
     | Using API
-    | URL:            /user/changePassword
+    | URL:            /api/user/changePassword
     | Method:         post
     | Description:    Updates the authenticated user's password
     */
-    public function getUserSettings(){
+    public function changeEmail(Request $request){
+        $request->validate([
+            'new_email' => ['required', new MatchOldPassword],
+        ]);
 
+        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+        return response()->json([
+            'name' => 'Password change successfully.',
+            'state' => 'success'
+        ]);
     }
 
 }
