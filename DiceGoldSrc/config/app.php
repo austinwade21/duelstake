@@ -175,6 +175,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Discord Service Provider
+         */
+        \SocialiteProviders\Manager\ServiceProvider::class,
     ],
 
     /*

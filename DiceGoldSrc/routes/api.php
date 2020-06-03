@@ -25,7 +25,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 | URL:            /api/user/changePassword
 | Controller:     UsersController@changePassword
 | Method:         POST
-| Description:    Updates the authenticated user's profile
+| Description:    Updates the authenticated user's password
 */
 Route::middleware('auth:api')->post('/user/changePassword', 'UsersController@changePassword');
 
@@ -34,8 +34,19 @@ Route::middleware('auth:api')->post('/user/changePassword', 'UsersController@cha
 | Updates a User's Profile
 |-------------------------------------------------------------------------------
 | URL:            /api/user/changePassword
-| Controller:     UsersController@changePassword
+| Controller:     UsersController@changeEmail
 | Method:         POST
-| Description:    Updates the authenticated user's profile
+| Description:    Updates the authenticated user's email
 */
 Route::middleware('auth:api')->post('/user/changeEmail','UsersController@changeEmail');
+
+/*
+|-------------------------------------------------------------------------------
+| Updates a User's Profile
+|-------------------------------------------------------------------------------
+| URL:            /api/user/setHideUserName
+| Controller:     UsersController@setHideUserName
+| Method:         POST
+| Description:    Updates the authenticated user's Hide My User Name
+*/
+Route::middleware('auth:api')->post('/user/setHideUserName','UsersController@setHideUserName');

@@ -184,7 +184,8 @@
                                         </div>
                                     </div>
 
-                                    <input type="hidden" name="api_token" value="{{\Illuminate\Support\Facades\Auth::user()->api_token}}">
+                                    <input type="hidden" name="api_token"
+                                           value="{{\Illuminate\Support\Facades\Auth::user()->api_token}}">
 
                                     <div class="form-group mb-0 mt-lg-4">
                                         <div class="center-button">
@@ -201,17 +202,23 @@
                                     <div class="dynamic-message">
                                         Your E-mail address must be confirmed so that you can receive security and
                                         marketing E-mails.
+                                        <a href="{{route('verification.resend')}}" id="resend-email" data-token="{{csrf_token()}}">Resend</a>
                                     </div>
                                 @endunless
 
-                                <form action="#" method="post" class="custom-validation" novalidate>
+                                <form action="#" method="post" id="change-email-form" class="custom-validation"
+                                      novalidate>
                                     <div class="form-group">
                                         <label for="email-input">{{__('Current Email')}}</label>
                                         <div>
                                             <input type="email" id="email-input" class="form-control" required
-                                                   parsley-type="email" value="{{\Illuminate\Support\Facades\Auth::user()->email}}"/>
+                                                   parsley-type="email" name="email"
+                                                   value="{{\Illuminate\Support\Facades\Auth::user()->email}}"/>
                                         </div>
                                     </div>
+                                    <input type="hidden" name="api_token"
+                                           value="{{\Illuminate\Support\Facades\Auth::user()->api_token}}">
+
                                     <div class="form-group mb-0 mt-lg-4">
                                         <div class="center-button">
                                             <button type="submit"
@@ -230,7 +237,7 @@
                                     that your funds must be withdrawn from the system to delete an account.
                                 </div>
                                 <br>
-                                <form action="#" method="post">
+                                <form action="#" method="post" id="change-hide-username-form">
                                     <div class="row">
                                         <div class="col-md-11">
                                             {{__('Hide My User Name')}}
@@ -238,11 +245,18 @@
                                         <div class="col-md-1">
                                             <div class="custom-control custom-switch mb-2" dir="rtl">
                                                 <input type="checkbox" class="custom-control-input"
-                                                       id="hide-username-toggle">
+                                                       id="hide-username-toggle" name="hide_user_name"
+                                                       @if (\Illuminate\Support\Facades\Auth::user()->hide_user_name)
+                                                               checked
+                                                       @endif
+                                                       >
                                                 <label class="custom-control-label" for="hide-username-toggle"></label>
                                             </div>
                                         </div>
                                     </div>
+                                    <input type="hidden" name="api_token"
+                                           value="{{\Illuminate\Support\Facades\Auth::user()->api_token}}">
+
                                     <div class="form-group mb-0 mt-lg-4">
                                         <div class="center-button">
                                             <button type="submit"

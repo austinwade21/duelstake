@@ -128,10 +128,60 @@ $(document).ready(function () {
       dataType: 'json',
       data: $(this).serialize(),
       success: function success(res) {
-        alert(res);
+        alert(res.message);
+      },
+      error: function error(message) {
+        alert(message.responseText);
       }
     });
     return false;
+  });
+  $("#change-email-form").submit(function (e) {
+    $.ajax({
+      type: "POST",
+      url: "/api/user/changeEmail",
+      dataType: 'json',
+      data: $(this).serialize(),
+      success: function success(res) {
+        alert(res.message);
+      },
+      error: function error(message) {
+        alert(message.responseText);
+      }
+    });
+    return false;
+  });
+  $("#change-hide-username-form").submit(function (e) {
+    $.ajax({
+      type: "POST",
+      url: "/api/user/setHideUserName",
+      dataType: 'json',
+      data: $(this).serialize(),
+      success: function success(res) {
+        alert(res.message);
+      },
+      error: function error(message) {
+        alert(message.responseText);
+      }
+    });
+    return false;
+  });
+  $('#resend-email').click(function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: this.href,
+      dataType: 'json',
+      data: {
+        '_token': $(this).data('token')
+      },
+      success: function success(res) {
+        alert(res.message);
+      },
+      error: function error(message) {
+        alert(message.responseText);
+      }
+    });
   });
 });
 

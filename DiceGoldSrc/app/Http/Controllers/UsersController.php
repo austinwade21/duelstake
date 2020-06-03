@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Rules\MatchOldPassword;
 use App\User;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -21,15 +22,13 @@ class UsersController extends Controller
         $this->middleware('auth');
     }
 
-    /*
-    |-------------------------------------------------------------------------------
-    | Updates a User's Profile
-    |-------------------------------------------------------------------------------
-    | Using API
-    | URL:            /api/user/changePassword
-    | Method:         post
-    | Description:    Updates the authenticated user's password
-    */
+    /**
+     * URL:            /api/user/changePassword
+     * Method:         post
+     * Description:    Updates the authenticated user's password
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function changePassword(Request $request){
         $request->validate([
             'current_password' => ['required', new MatchOldPassword],
@@ -39,30 +38,45 @@ class UsersController extends Controller
 
         User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
         return response()->json([
-            'name' => 'Password change successfully.',
-            'state' => 'success'
+            'message' => 'Password changed successfully.',
+            'state' => 'success',
+            'data' => ['user' => auth()->user(), 'request' => $request->all()],
         ]);
     }
 
-    /*
-    |-------------------------------------------------------------------------------
-    | Updates a User's Profile
-    |-------------------------------------------------------------------------------
-    | Using API
-    | URL:            /api/user/changePassword
-    | Method:         post
-    | Description:    Updates the authenticated user's password
-    */
+    /**
+     * URL:            /api/user/changeEmail
+     * Method:         post
+     * Description:    Updates the authenticated user's email
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function changeEmail(Request $request){
-        $request->validate([
-            'new_email' => ['required', new MatchOldPassword],
-        ]);
-
-        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+        User::find(auth()->user()->id)->update(['email'=> $request->email]);
         return response()->json([
-            'name' => 'Password change successfully.',
-            'state' => 'success'
+            'message' => 'Email changed successfully.',
+            'state' => 'success',
+            'data' => ['user' => auth()->user(), 'request' => $request->all()],
         ]);
     }
 
+    /**
+     * URL:            /api/user/setHideUserName
+     * Method:         post
+     * Description:    Updates the authenticated user's Hide My User Name field
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function setHideUserName(Request $request){
+        $hide = false;
+        if($request->hide_user_name == "on"){
+            $hide = true;
+        }
+        User::find(auth()->user()->id)->update(['hide_user_name'=> $hide]);
+        return response()->json([
+            'message' => 'Hide Username changed successfully.',
+            'state' => 'success',
+            'data' => ['user' => auth()->user(), 'request' => $request->all(), 'value'=>$hide],
+        ]);
+    }
 }
