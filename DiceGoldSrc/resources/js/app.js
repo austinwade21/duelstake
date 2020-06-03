@@ -102,4 +102,10 @@ $( document ).ready(function() {
 
         });
     });
+
+    $('#discord-toggle').click(function (e) {
+        if($(this).prop('checked')){
+            window.open('/user/discord','_blank');
+        }
+    });
 });

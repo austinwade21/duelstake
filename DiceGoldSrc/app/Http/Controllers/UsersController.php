@@ -9,6 +9,8 @@ use App\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Socialite\Facades\Socialite;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class UsersController extends Controller
 {
@@ -78,5 +80,28 @@ class UsersController extends Controller
             'state' => 'success',
             'data' => ['user' => auth()->user(), 'request' => $request->all(), 'value'=>$hide],
         ]);
+    }
+
+    /**
+     * URL:            /user/discord
+     * Method:         get
+     * Description:    redirect to discord provider service
+     * @param Request $request
+     * @return RedirectResponse
+     */
+    public function discord(Request $request){
+        return Socialite::driver('discord')->redirect();
+    }
+
+    /**
+     * URL:            /user/discord/callback
+     * Method:         post
+     * Description:    receive discord user information
+     * @param Request $request
+     * @return RedirectResponse
+     */
+    public function discordCallback(Request $request){
+        $user = Socialite::driver('discord')->user();
+        return redirect(route('home'));
     }
 }
