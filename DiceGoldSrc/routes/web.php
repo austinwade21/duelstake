@@ -20,6 +20,6 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/user/discord', 'UsersController@discord');
+Route::middleware('auth')->get('/user/social', 'UsersController@social');
 
-Route::get('/user/discord/callback', 'UsersController@discordCallback');
+Route::middleware('auth')->get('/user/discord/callback', 'UsersController@discordCallback');

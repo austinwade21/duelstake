@@ -103,9 +103,30 @@ $( document ).ready(function() {
         });
     });
 
-    $('#discord-toggle').click(function (e) {
+    $('.social-toggle').click(function (e) {
         if($(this).prop('checked')){
-            window.open('/user/discord','_blank');
+            window.open('/user/social?social_id=' + $(this).data('social-id'),'_blank');
+        }
+        else{
+            $.ajax
+            ({
+                type: "POST",
+                url: '/api/user/social/unlink',
+                dataType: 'json',
+                data: {
+                    'api_token': $(this).data('token'),
+                    'social_id': $(this).data('social-id'),
+                },
+                success: function (res){
+                    alert(res.message.toString());
+                },
+                error(message, ...optionalParams) {
+                    alert(message.responseText);
+                }
+
+            });
+
+            $(this).closest(".row").find('.social-client-name').hide();
         }
     });
 });

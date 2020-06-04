@@ -22,6 +22,7 @@ class CreateSocialDataTable extends Migration
             $table->string('property_name', 80);
             $table->string('property_value', 255);
             $table->timestamps();
+            $table->unique(array('user_id', 'social_id', 'property_name'));
         });
     }
 

@@ -50,3 +50,14 @@ Route::middleware('auth:api')->post('/user/changeEmail','UsersController@changeE
 | Description:    Updates the authenticated user's Hide My User Name
 */
 Route::middleware('auth:api')->post('/user/setHideUserName','UsersController@setHideUserName');
+
+/*
+|-------------------------------------------------------------------------------
+| Updates a User's Profile
+|-------------------------------------------------------------------------------
+| URL:            /api/user/social/unlink
+| Controller:     UsersController@socialUnlink
+| Method:         POST
+| Description:    Updates the authenticated user's Hide My User Name
+*/
+Route::middleware('auth:api')->post('/user/social/unlink', 'UsersController@socialUnlink');

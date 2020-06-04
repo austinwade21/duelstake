@@ -106,6 +106,16 @@
 
         </div>
     </header>
+{{--    @if(\Illuminate\Support\Facades\Session::has('message'))--}}
+{{--        @foreach(\Illuminate\Support\Facades\Session::get('message') as $message)--}}
+{{--            <p class="alert {{ $message['alert-class'] }}">{{ $message['message'] }}</p>--}}
+{{--        @endforeach--}}
+{{--    @endif--}}
+    @if(session()->has('message.level'))
+        <div class="alert alert-{{ session('message.level') }}">
+            {!! session('message.content') !!}
+        </div>
+    @endif
 
     <main class="py-4" id="app">
         @yield('content')
@@ -268,18 +278,28 @@
                                 </form>
                             </div>
                             <div class="tab-pane" id="tabSocial" role="tabpanel">
-                                <div class="row">
-                                    <div class="col-md-11">
-                                        {{__('Discord')}}
-                                    </div>
-                                    <div class="col-md-1">
-                                        <div class="custom-control custom-switch mb-2" dir="rtl">
-                                            <input type="checkbox" class="custom-control-input"
-                                                   id="discord-toggle">
-                                            <label class="custom-control-label" for="discord-toggle"></label>
+                                @foreach($socialData as $social)
+                                    <div class="row">
+                                        <div class="col-md-11">
+                                            <div>{{$social['name']}}</div>
+                                            @if(isset($social['properties']['name']))
+                                                <div class="social-client-name">{{$social['properties']['name']}}</div>
+                                            @endif
+                                        </div>
+                                        <div class="col-md-1">
+                                            <div class="custom-control custom-switch mb-2" dir="rtl">
+                                                <input type="checkbox" class="custom-control-input social-toggle"
+                                                       data-social-id="{{$social['id']}}" id="{{$social['name']}}-toggle"
+                                                       data-token="{{\Illuminate\Support\Facades\Auth::user()->api_token}}"
+                                                @if(isset($social['properties']['name']))
+                                                    checked
+                                                @endif
+                                                >
+                                                <label class="custom-control-label" for="{{$social['name']}}-toggle"></label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -303,7 +323,6 @@
     <script src="{{ asset('theme/js/pages/form-validation.init.js') }}"></script>
     <script src="{{ asset('theme/js/app.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
-
 </div>
 </body>
 </html>

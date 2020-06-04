@@ -17,6 +17,7 @@ class CreateSocialProvidersTable extends Migration
         Schema::create('social_providers', function (Blueprint $table) {
             $table->id();
             $table->string('name', 80);
+            $table->string('driver', 80);
             $table->string('url', 255)->nullable(true);
             $table->timestamps();
         });
@@ -25,6 +26,7 @@ class CreateSocialProvidersTable extends Migration
         DB::table('social_providers')->insert(
             array(
                 'name' => 'Discord',
+                'driver' => 'discord',
                 'url' => 'https://discord.com',
             )
         );
