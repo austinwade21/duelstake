@@ -3,10 +3,12 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
 // require('./bootstrap');
 
-// window.Vue = require('vue');
+import App from "./components/App";
+
+
+window.Vue = require('vue');
 
 /**
  * The following block of code may be used to automatically register your
@@ -19,7 +21,7 @@
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -27,106 +29,8 @@
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// const app = new Vue({
-//     el: '#app',
-// });
-
-$( document ).ready(function() {
-    $("#change-password-form").submit(function(e){
-        $.ajax
-        ({
-            type: "POST",
-            url: "/api/user/changePassword",
-            dataType: 'json',
-            data: $(this).serialize(),
-            success: function (res){
-                alert(res.message);
-            },
-            error(message, ...optionalParams) {
-                alert(message.responseText);
-            }
-        });
-        return false;
-    });
-
-    $("#change-email-form").submit(function(e){
-        $.ajax
-        ({
-            type: "POST",
-            url: "/api/user/changeEmail",
-            dataType: 'json',
-            data: $(this).serialize(),
-            success: function (res){
-                alert(res.message);
-            },
-            error(message, ...optionalParams) {
-                alert(message.responseText);
-            }
-
-        });
-        return false;
-    });
-
-    $("#change-hide-username-form").submit(function(e){
-        $.ajax
-        ({
-            type: "POST",
-            url: "/api/user/setHideUserName",
-            dataType: 'json',
-            data: $(this).serialize(),
-            success: function (res){
-                alert(res.message);
-            },
-            error(message, ...optionalParams) {
-                alert(message.responseText);
-            }
-
-        });
-        return false;
-    });
-
-    $('#resend-email').click(function(e){
-        e.preventDefault();
-        $.ajax
-        ({
-            type: "POST",
-            url: this.href,
-            dataType: 'json',
-            data: {'_token': $(this).data('token')},
-            success: function (res){
-                alert(res.message);
-            },
-            error(message, ...optionalParams) {
-                alert(message.responseText);
-            }
-
-        });
-    });
-
-    $('.social-toggle').click(function (e) {
-        if($(this).prop('checked')){
-            window.open('/user/social?social_id=' + $(this).data('social-id'),'_blank');
-        }
-        else{
-            $.ajax
-            ({
-                type: "POST",
-                url: '/api/user/social/unlink',
-                dataType: 'json',
-                data: {
-                    'api_token': $(this).data('token'),
-                    'social_id': $(this).data('social-id'),
-                },
-                success: function (res){
-                    alert(res.message.toString());
-                },
-                error(message, ...optionalParams) {
-                    alert(message.responseText);
-                }
-
-            });
-
-            $(this).closest(".row").find('.social-client-name').hide();
-        }
-    });
+const app = new Vue({
+    el: '#app',
+    components: { App },
+    render: h => h(App)
 });

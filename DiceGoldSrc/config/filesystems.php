@@ -50,7 +50,7 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
+            'root' => storage_path('app/public_html'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
@@ -65,6 +65,12 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
+        'icons' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public_html/icons'),
+            'url' => env('APP_URL').'/icons',
+            'visibility' => 'public',
+        ],
     ],
 
     /*

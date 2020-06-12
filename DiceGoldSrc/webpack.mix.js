@@ -14,4 +14,5 @@ const mix = require('laravel-mix');
 mix.setPublicPath(path.normalize('../public_html'));
 
 mix.js('resources/js/app.js', 'js')
+    .js('resources/js/bootstrap.js', 'js')
     .sass('resources/sass/app.scss', 'css');

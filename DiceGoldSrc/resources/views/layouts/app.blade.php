@@ -15,7 +15,7 @@
 
     <!-- Styles -->
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('theme/images/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
     <!-- Bootstrap Css -->
     <link href="{{ asset('theme/css/bootstrap-dark.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css"/>
@@ -26,7 +26,7 @@
     <link href="{{ asset('css/app.css') }}" id="app-style" rel="stylesheet" type="text/css"/>
 
 </head>
-<body data-topbar="dark" data-layout="horizontal">
+<body data-topbar="dark" class="dark" data-layout="horizontal">
 <div id="layout-wrapper">
     <header id="page-topbar">
         <div class="navbar-header">
@@ -117,7 +117,7 @@
         </div>
     @endif
 
-    <main class="py-4" id="app">
+    <main class="py-4">
         @yield('content')
     </main>
 
@@ -140,31 +140,24 @@
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#tabPassword"
                                    role="tab" aria-selected="true">
-                                                        <span class="d-block d-sm-none"><i
-                                                                    class="fas fa-home"></i></span>
                                     <span class="d-none d-sm-block">{{__('PASSWORD')}}</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabEmail" role="tab"
                                    aria-selected="false">
-                                                        <span class="d-block d-sm-none"><i
-                                                                    class="far fa-user"></i></span>
                                     <span class="d-none d-sm-block">{{__('E-MAIL')}}</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabPrivacy" role="tab"
                                    aria-selected="false">
-                                    <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
                                     <span class="d-none d-sm-block">{{__('PRIVACY')}}</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabSocial" role="tab"
                                    aria-selected="false">
-                                                        <span class="d-block d-sm-none"><i
-                                                                    class="fas fa-cog"></i></span>
                                     <span class="d-none d-sm-block">{{__('SOCIAL')}}</span>
                                 </a>
                             </li>
@@ -322,7 +315,108 @@
     <script src="{{ asset('theme/libs/parsleyjs/parsley.min.js') }}"></script>
     <script src="{{ asset('theme/js/pages/form-validation.init.js') }}"></script>
     <script src="{{ asset('theme/js/app.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        $( document ).ready(function() {
+            $("#change-password-form").submit(function(e){
+                $.ajax
+                ({
+                    type: "POST",
+                    url: "/api/user/changePassword",
+                    dataType: 'json',
+                    data: $(this).serialize(),
+                    success: function (res){
+                        alert(res.message);
+                    },
+                    error(message, ...optionalParams) {
+                        alert(message.responseText);
+                    }
+                });
+                return false;
+            });
+
+            $("#change-email-form").submit(function(e){
+                $.ajax
+                ({
+                    type: "POST",
+                    url: "/api/user/changeEmail",
+                    dataType: 'json',
+                    data: $(this).serialize(),
+                    success: function (res){
+                        alert(res.message);
+                    },
+                    error(message, ...optionalParams) {
+                        alert(message.responseText);
+                    }
+
+                });
+                return false;
+            });
+
+            $("#change-hide-username-form").submit(function(e){
+                $.ajax
+                ({
+                    type: "POST",
+                    url: "/api/user/setHideUserName",
+                    dataType: 'json',
+                    data: $(this).serialize(),
+                    success: function (res){
+                        alert(res.message);
+                    },
+                    error(message, ...optionalParams) {
+                        alert(message.responseText);
+                    }
+
+                });
+                return false;
+            });
+
+            $('#resend-email').click(function(e){
+                e.preventDefault();
+                $.ajax
+                ({
+                    type: "POST",
+                    url: this.href,
+                    dataType: 'json',
+                    data: {'_token': $(this).data('token')},
+                    success: function (res){
+                        alert(res.message);
+                    },
+                    error(message, ...optionalParams) {
+                        alert(message.responseText);
+                    }
+
+                });
+            });
+
+            $('.social-toggle').click(function (e) {
+                if($(this).prop('checked')){
+                    window.open('/user/social?social_id=' + $(this).data('social-id'),'_blank');
+                }
+                else{
+                    $.ajax
+                    ({
+                        type: "POST",
+                        url: '/api/user/social/unlink',
+                        dataType: 'json',
+                        data: {
+                            'api_token': $(this).data('token'),
+                            'social_id': $(this).data('social-id'),
+                        },
+                        success: function (res){
+                            alert(res.message.toString());
+                        },
+                        error(message, ...optionalParams) {
+                            alert(message.responseText);
+                        }
+
+                    });
+
+                    $(this).closest(".row").find('.social-client-name').hide();
+                }
+            });
+
+        });
+    </script>
 </div>
 </body>
 </html>
