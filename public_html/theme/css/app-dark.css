@@ -1185,11 +1185,11 @@ body[data-layout="horizontal"][data-layout-size="boxed"] .container-fluid, body[
 
 @keyframes spin {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg); }
   100% {
-    -webkit-transform: rotate(359deg);
-            transform: rotate(359deg); } }
+    -webkit-transform: rotateY(359deg);
+            transform: rotateY(359deg); } }
 
 .form-check-right {
   padding-left: 0;

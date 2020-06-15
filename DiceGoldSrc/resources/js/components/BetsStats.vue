@@ -47,79 +47,19 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr class="row-clickable" data-table-bet-hash="88b7edd57b5">
-                            <td class="cell-hidden cell-hidden_4"><span
-                                    class="link-name">88b7edd57b5</span></td>
-                            <td class="cell-hidden cell-hidden_3">17:17:41</td>
-                            <td class="cell-clickable" data-table-user-hash="2a584338ba"
-                                data-table-user-symbol="BTC"><span
-                                    class="link-name link-name_custom"><span
-                                    class="fas fa-user"></span> ajib8888</span></td>
-                            <td class=""><span class="bet amount-icon"><span
-                                    class="fab fa-bitcoin"></span> <strong
-                                    class="bonus-decor">0.00000250</strong></span></td>
-                            <td class="cell-hidden cell-hidden_2">0x</td>
-                            <td class="cell-hidden cell-hidden_2">0.23%</td>
-                            <td class="cell-hidden cell-hidden_1">&lt; 23</td>
-                            <td class="cell-hidden cell-hidden_3">2537</td>
-                            <td><span class="amount-icon bet loss"><span
-                                    class="fab fa-bitcoin"></span> <strong>-0.00000250</strong></span>
-                            </td>
-                        </tr>
-                        <tr class="row-clickable" data-table-bet-hash="ebe4d6684d4">
-                            <td class="cell-hidden cell-hidden_4"><span
-                                    class="link-name">ebe4d6684d4</span></td>
-                            <td class="cell-hidden cell-hidden_3">17:17:40</td>
-                            <td class="cell-clickable" data-table-user-hash="eaebbb638a"
-                                data-table-user-symbol="BTC"><span
-                                    class="link-name link-name_custom"><span
-                                    class="fas fa-user"></span> Dandiego</span></td>
-                            <td class=""><span class="bet amount-icon"><span
-                                    class="fab fa-bitcoin"></span> <strong
-                                    class="bonus-decor">0.00000266</strong></span></td>
-                            <td class="cell-hidden cell-hidden_2">0x</td>
-                            <td class="cell-hidden cell-hidden_2">0.99%</td>
-                            <td class="cell-hidden cell-hidden_1">&lt; 99</td>
-                            <td class="cell-hidden cell-hidden_3">1132</td>
-                            <td><span class="amount-icon bet win"><span
-                                    class="fab fa-bitcoin"></span> <strong>-0.00000266</strong></span>
-                            </td>
-                        </tr>
-                        <tr class="row-clickable" data-table-bet-hash="6d985ee78d3">
-                            <td class="cell-hidden cell-hidden_4"><span
-                                    class="link-name">6d985ee78d3</span></td>
-                            <td class="cell-hidden cell-hidden_3">17:17:39</td>
-                            <td><span class="ninja"><span></span>Duckling</span></td>
-                            <td class=""><span class="bet amount-icon"><span
-                                    class="fab fa-bitcoin"></span> <strong
-                                    class="bonus-decor">0.00000100</strong></span></td>
-                            <td class="cell-hidden cell-hidden_2">0x</td>
-                            <td class="cell-hidden cell-hidden_2">90%</td>
-                            <td class="cell-hidden cell-hidden_1">&lt; 9000</td>
-                            <td class="cell-hidden cell-hidden_3">9858</td>
-                            <td><span class="amount-icon bet loss"><span
-                                    class="fab fa-bitcoin"></span> <strong>-0.00000100</strong></span>
-                            </td>
-                        </tr>
-                        <tr class="row-clickable" data-table-bet-hash="6d985ee77b6">
-                            <td class="cell-hidden cell-hidden_4"><span
-                                    class="link-name">6d985ee77b6</span></td>
-                            <td class="cell-hidden cell-hidden_3">17:17:39</td>
-                            <td class="cell-clickable" data-table-user-hash="7a999d25ba"
-                                data-table-user-symbol="BTC"><span
-                                    class="link-name link-name_custom"><span
-                                    class="fas fa-user"></span> LordPanic</span></td>
-                            <td class=""><span class="bet amount-icon"><span
-                                    class="fab fa-bitcoin"></span> <strong
-                                    class="bonus-decor">0.00000295</strong></span></td>
-                            <td class="cell-hidden cell-hidden_2">0x</td>
-                            <td class="cell-hidden cell-hidden_2">0.01%</td>
-                            <td class="cell-hidden cell-hidden_1">&lt; 1</td>
-                            <td class="cell-hidden cell-hidden_3">192</td>
-                            <td><span class="amount-icon bet loss"><span
-                                    class="fab fa-bitcoin"></span> <strong>-0.00000295</strong></span>
-                            </td>
-                        </tr>
+                        <Bet v-for="bet in allBets"
+                             v-bind:key="bet.id"
+                             :id="bet.id"
+                             :time="bet.time"
+                             :username="bet.username"
+                             :bet-amount="bet.betAmount"
+                             :payout="bet.payout"
+                             :game="bet.game"
+                             :chance="bet.chance"
+                             :roll="bet.roll"
+                             :profit="bet.profit"
+                             :hidden="[]"
+                        ></Bet>
                         </tbody>
                     </table>
                 </div>
@@ -138,7 +78,20 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
+                        <Bet v-for="bet in myBets"
+                             v-bind:key="bet.id"
+                             :id="bet.id"
+                             :time="bet.time"
+                             :username="bet.username"
+                             :bet-amount="bet.betAmount"
+                             :payout="bet.payout"
+                             :game="bet.game"
+                             :chance="bet.chance"
+                             :roll="bet.roll"
+                             :profit="bet.profit"
+                             :hidden="['username']"
+                        ></Bet>
+                        <tr v-if="!myBets.length">
                             <td class="table-empty-td" colspan="9" style="text-align: center;">No bets
                                 yet
                             </td>
@@ -162,79 +115,19 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr class="row-clickable" data-table-bet-hash="88b7edd57b5">
-                            <td class="cell-hidden cell-hidden_4"><span
-                                    class="link-name">88b7edd57b5</span></td>
-                            <td class="cell-hidden cell-hidden_3">17:17:41</td>
-                            <td class="cell-clickable" data-table-user-hash="2a584338ba"
-                                data-table-user-symbol="BTC"><span
-                                    class="link-name link-name_custom"><span
-                                    class="fas fa-user"></span> ajib8888</span></td>
-                            <td class=""><span class="bet amount-icon"><span
-                                    class="fab fa-bitcoin"></span> <strong
-                                    class="bonus-decor">0.00000250</strong></span></td>
-                            <td class="cell-hidden cell-hidden_2">0x</td>
-                            <td class="cell-hidden cell-hidden_2">0.23%</td>
-                            <td class="cell-hidden cell-hidden_1">&lt; 23</td>
-                            <td class="cell-hidden cell-hidden_3">2537</td>
-                            <td><span class="amount-icon bet loss"><span
-                                    class="fab fa-bitcoin"></span> <strong>-0.00000250</strong></span>
-                            </td>
-                        </tr>
-                        <tr class="row-clickable" data-table-bet-hash="ebe4d6684d4">
-                            <td class="cell-hidden cell-hidden_4"><span
-                                    class="link-name">ebe4d6684d4</span></td>
-                            <td class="cell-hidden cell-hidden_3">17:17:40</td>
-                            <td class="cell-clickable" data-table-user-hash="eaebbb638a"
-                                data-table-user-symbol="BTC"><span
-                                    class="link-name link-name_custom"><span
-                                    class="fas fa-user"></span> Dandiego</span></td>
-                            <td class=""><span class="bet amount-icon"><span
-                                    class="fab fa-bitcoin"></span> <strong
-                                    class="bonus-decor">0.00000266</strong></span></td>
-                            <td class="cell-hidden cell-hidden_2">0x</td>
-                            <td class="cell-hidden cell-hidden_2">0.99%</td>
-                            <td class="cell-hidden cell-hidden_1">&lt; 99</td>
-                            <td class="cell-hidden cell-hidden_3">1132</td>
-                            <td><span class="amount-icon bet loss"><span
-                                    class="fab fa-bitcoin"></span> <strong>-0.00000266</strong></span>
-                            </td>
-                        </tr>
-                        <tr class="row-clickable" data-table-bet-hash="6d985ee78d3">
-                            <td class="cell-hidden cell-hidden_4"><span
-                                    class="link-name">6d985ee78d3</span></td>
-                            <td class="cell-hidden cell-hidden_3">17:17:39</td>
-                            <td><span class="ninja"><span></span>Duckling</span></td>
-                            <td class=""><span class="bet amount-icon"><span
-                                    class="fab fa-bitcoin"></span> <strong
-                                    class="bonus-decor">0.00000100</strong></span></td>
-                            <td class="cell-hidden cell-hidden_2">0x</td>
-                            <td class="cell-hidden cell-hidden_2">90%</td>
-                            <td class="cell-hidden cell-hidden_1">&lt; 9000</td>
-                            <td class="cell-hidden cell-hidden_3">9858</td>
-                            <td><span class="amount-icon bet loss"><span
-                                    class="fab fa-bitcoin"></span> <strong>-0.00000100</strong></span>
-                            </td>
-                        </tr>
-                        <tr class="row-clickable" data-table-bet-hash="6d985ee77b6">
-                            <td class="cell-hidden cell-hidden_4"><span
-                                    class="link-name">6d985ee77b6</span></td>
-                            <td class="cell-hidden cell-hidden_3">17:17:39</td>
-                            <td class="cell-clickable" data-table-user-hash="7a999d25ba"
-                                data-table-user-symbol="BTC"><span
-                                    class="link-name link-name_custom"><span
-                                    class="fas fa-user"></span> LordPanic</span></td>
-                            <td class=""><span class="bet amount-icon"><span
-                                    class="fab fa-bitcoin"></span> <strong
-                                    class="bonus-decor">0.00000295</strong></span></td>
-                            <td class="cell-hidden cell-hidden_2">0x</td>
-                            <td class="cell-hidden cell-hidden_2">0.01%</td>
-                            <td class="cell-hidden cell-hidden_1">&lt; 1</td>
-                            <td class="cell-hidden cell-hidden_3">192</td>
-                            <td><span class="amount-icon bet loss"><span
-                                    class="fab fa-bitcoin"></span> <strong>-0.00000295</strong></span>
-                            </td>
-                        </tr>
+                        <Bet v-for="bet in highRollers"
+                             v-bind:key="bet.id"
+                             :id="bet.id"
+                             :time="bet.time"
+                             :username="bet.username"
+                             :bet-amount="bet.betAmount"
+                             :payout="bet.payout"
+                             :game="bet.game"
+                             :chance="bet.chance"
+                             :roll="bet.roll"
+                             :profit="bet.profit"
+                             :hidden="[]"
+                        ></Bet>
                         </tbody>
                     </table>
                 </div>
@@ -251,35 +144,19 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr class="row-clickable" data-table-bet-hash="5b58e485b77">
-                            <td class="cell-hidden cell-hidden_4"><span
-                                    class="link-name">5b58e485b77</span></td>
-                            <td class="cell-hidden cell-hidden_3">05/17/20</td>
-                            <td class="cell-clickable" data-table-user-hash="7a8443983a"
-                                data-table-user-symbol="BTC"><span
-                                    class="link-name link-name_custom"><span
-                                    class="fas fa-user"></span> DoubleDuckets</span></td>
-                            <td class="bet-bonus"><span class="amount-icon bet amount"><span
-                                    class="fab fa-bitcoin"></span> <strong class="bonus-decor">0.00006063</strong></span>
-                            </td>
-                            <td class="cell-hidden cell-hidden_2">0.61%</td>
-                            <td><span class="amount-icon bet win"><span
-                                    class="fab fa-bitcoin"></span> <strong>0.01167622</strong></span>
-                            </td>
-                        </tr>
-                        <tr class="row-clickable" data-table-bet-hash="d5868289977">
-                            <td class="cell-hidden cell-hidden_4"><span
-                                    class="link-name">d5868289977</span></td>
-                            <td class="cell-hidden cell-hidden_3">05/16/20</td>
-                            <td><span class="ninja"><span></span>Duckling</span></td>
-                            <td class=""><span class="amount-icon bet amount"><span
-                                    class="fab fa-bitcoin"></span> <strong class="bonus-decor">0.00001000</strong></span>
-                            </td>
-                            <td class="cell-hidden cell-hidden_2">0.1%</td>
-                            <td><span class="amount-icon bet win"><span
-                                    class="fab fa-bitcoin"></span> <strong>0.00192529</strong></span>
-                            </td>
-                        </tr>
+                        <Bet v-for="bet in jackpots"
+                             v-bind:key="bet.id"
+                             :id="bet.id"
+                             :time="bet.time"
+                             :username="bet.username"
+                             :bet-amount="bet.betAmount"
+                             :payout="bet.payout"
+                             :game="bet.game"
+                             :chance="bet.chance"
+                             :roll="bet.roll"
+                             :profit="bet.profit"
+                             :hidden="['payout', 'game', 'roll']"
+                        ></Bet>
 
                         </tbody>
                     </table>
@@ -291,8 +168,182 @@
 </template>
 
 <script>
+    import Bet from "./Bet";
+
     export default {
-        name: "BetsStats"
+        name: "BetsStats",
+        components: {
+            Bet,
+        },
+        data() {
+            return {
+                allBets: [
+                    {
+                        id: '88b7edd57b5',
+                        time: '17:17:41',
+                        username: 'ajib8888',
+                        betAmount: '0.00000266',
+                        payout: '0.34x',
+                        chance: '50',
+                        game: '< 5000',
+                        roll: '2537',
+                        profit: -0.00000250,
+                    },
+                    {
+                        id: 'ebe4d6684d4',
+                        time: '17:17:40',
+                        username: 'Dandiego',
+                        betAmount: '0.00000250',
+                        payout: '0x',
+                        chance: '0.23',
+                        game: '< 23',
+                        roll: '1678',
+                        profit: '0.00000750',
+                    },
+                    {
+                        id: '88b7edda57b',
+                        time: '17:17:41',
+                        username: 'LordPanic',
+                        betAmount: '0.00000250',
+                        payout: '0x',
+                        chance: '0.23',
+                        game: '> 5333',
+                        roll: '2537',
+                        profit: '-0.00000250',
+                    },
+                    {
+                        id: '88b7e5657b5',
+                        time: '17:17:41',
+                        username: '',
+                        betAmount: '0.00000250',
+                        payout: '0x',
+                        chance: '0.23',
+                        game: '< 8555',
+                        roll: '2537',
+                        profit: -0.00000250,
+                    },
+
+                ],
+                myBets: [
+                    {
+                        id: '88b7edd57b5',
+                        time: '17:17:41',
+                        username: 'ajib8888',
+                        betAmount: '0.00000266',
+                        payout: '0.34x',
+                        chance: '50',
+                        game: '< 5000',
+                        roll: '2537',
+                        profit: -0.00000250,
+                    },
+                    {
+                        id: 'ebe4d6684d4',
+                        time: '17:17:40',
+                        username: 'Dandiego',
+                        betAmount: '0.00000250',
+                        payout: '0x',
+                        chance: '0.23',
+                        game: '< 23',
+                        roll: '1678',
+                        profit: '0.00000750',
+                    },
+                    {
+                        id: '88b7edda57b',
+                        time: '17:17:41',
+                        username: 'LordPanic',
+                        betAmount: '0.00000250',
+                        payout: '0x',
+                        chance: '0.23',
+                        game: '> 5333',
+                        roll: '2537',
+                        profit: '-0.00000250',
+                    },
+                    {
+                        id: '88b7e5657b5',
+                        time: '17:17:41',
+                        username: '',
+                        betAmount: '0.00000250',
+                        payout: '0x',
+                        chance: '0.23',
+                        game: '< 8555',
+                        roll: '2537',
+                        profit: -0.00000250,
+                    },
+
+                ],
+                highRollers: [
+                    {
+                        id: 'ebe4d6684d4',
+                        time: '17:17:40',
+                        username: 'Dandiego',
+                        betAmount: '0.00000250',
+                        payout: '0x',
+                        chance: '0.23',
+                        game: '< 23',
+                        roll: '1678',
+                        profit: '0.00000750',
+                    },
+                    {
+                        id: '88b7edda57b',
+                        time: '17:17:41',
+                        username: 'LordPanic',
+                        betAmount: '0.00000250',
+                        payout: '0x',
+                        chance: '0.23',
+                        game: '> 5333',
+                        roll: '2537',
+                        profit: '-0.00000250',
+                    },
+                ],
+                jackpots: [
+                    {
+                        id: '88b7edd57b5',
+                        time: '17:17:41',
+                        username: 'ajib8888',
+                        betAmount: '0.00000266',
+                        payout: '0.34x',
+                        chance: '50',
+                        game: '< 5000',
+                        roll: '2537',
+                        profit: -0.00000250,
+                    },
+                    {
+                        id: 'ebe4d6684d4',
+                        time: '17:17:40',
+                        username: 'Dandiego',
+                        betAmount: '0.00000250',
+                        payout: '0x',
+                        chance: '0.23',
+                        game: '< 23',
+                        roll: '1678',
+                        profit: '0.00000750',
+                    },
+                    {
+                        id: '88b7edda57b',
+                        time: '17:17:41',
+                        username: 'LordPanic',
+                        betAmount: '0.00000250',
+                        payout: '0x',
+                        chance: '0.23',
+                        game: '> 5333',
+                        roll: '2537',
+                        profit: '-0.00000250',
+                    },
+                    {
+                        id: '88b7e5657b5',
+                        time: '17:17:41',
+                        username: '',
+                        betAmount: '0.00000250',
+                        payout: '0x',
+                        chance: '0.23',
+                        game: '< 8555',
+                        roll: '2537',
+                        profit: -0.00000250,
+                    },
+
+                ],
+            }
+        },
     }
 </script>
 

@@ -2,325 +2,325 @@
 
 @section('content')
     <div id="app">
-    <div class="container">
-        <div id="game" class="game">
-            <canvas id="game-area" style="display: none;"></canvas>
-            <div class="game__field">
-                <div class="game-process">
-                    <div class="game-bonus-element"></div>
-                    <div class="game-process__top">
-                        <div class="game-information tutorial-step-stats">
-                            <ul class="game-information__list">
-                                <li>
-                                    <div class="game-number">Luck <span
-                                                class="number number_luck">N/A</span></div>
-                                    <span class="separator-dot"><span></span></span></li>
-                                <li>
-                                    <div class="game-number">Bets <span class="number">0</span></div>
-                                    <span class="separator-dot"><span></span></span></li>
-                                <li>
-                                    <div class="game-number">Wins <span class="number">0</span></div>
-                                    <span class="separator-dot"><span></span></span></li>
-                                <li>
-                                    <div class="game-number">Losses <span class="number">0</span></div>
-                                    <span class="separator-dot"><span></span></span></li>
-                                <li>
-                                    <div class="game-number">Wagered <span class="number"><span
-                                                    class="fab fa-bitcoin"></span>&nbsp;0.00000000</span>
-                                    </div>
-                                    <span class="separator-dot"><span></span></span></li>
-                                <li>
-                                    <div class="game-number">Profit <span class="number"><span
-                                                    class="fab fa-bitcoin"></span>&nbsp; <span
-                                                    class="number-profit">0.00000000</span></span></div>
-                                </li>
-                            </ul>
-                            <div data-tip="Reset game stats" class="button_link button_link-small"
-                                 currentitem="false"><span class="icon-refresh"></span></div>
-                        </div>
-                    </div>
-                    <div class="game-animation tutorial-step-greeting" id="game-animation">
-                        <div class="game-animation__low"></div>
-                        <div class="game-animation__number">
-                            <div class="game-animation__number-wrapper">
-                                <div class="game-animation__number-digit-wrapper">
-                                    <div class="game-animation__number-digit">0</div>
-                                </div>
-                                <div class="game-animation__number-frame">
-                                    <svg viewBox="0 0 130 130">
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_0"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_1"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_2"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_3"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_4"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_5"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_6"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_7"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_8"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_9"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_10"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_11"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_12"
-                                             style="visibility: hidden;"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="game-animation__number-wrapper">
-                                <div class="game-animation__number-digit-wrapper">
-                                    <div class="game-animation__number-digit">0</div>
-                                </div>
-                                <div class="game-animation__number-frame">
-                                    <svg viewBox="0 0 130 130">
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_0"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_1"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_2"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_3"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_4"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_5"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_6"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_7"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_8"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_9"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_10"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_11"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_12"
-                                             style="visibility: hidden;"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="game-animation__number-wrapper">
-                                <div class="game-animation__number-digit-wrapper">
-                                    <div class="game-animation__number-digit">0</div>
-                                </div>
-                                <div class="game-animation__number-frame">
-                                    <svg viewBox="0 0 130 130">
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_0"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_1"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_2"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_3"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_4"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_5"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_6"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_7"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_8"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_9"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_10"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_11"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_12"
-                                             style="visibility: hidden;"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="game-animation__number-wrapper">
-                                <div class="game-animation__number-digit-wrapper">
-                                    <div class="game-animation__number-digit">0</div>
-                                </div>
-                                <div class="game-animation__number-frame">
-                                    <svg viewBox="0 0 130 130">
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_0"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_1"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_2"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_3"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_4"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_5"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_6"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_7"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_8"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_9"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_10"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_11"
-                                             style="visibility: hidden;"></use>
-                                        <use class="egg-frame"
-                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_12"
-                                             style="visibility: hidden;"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-animation__high">&lt; 5000</div>
-                    </div>
-                    <div class="game-circle-section">
-                        <div class="game-bets"></div>
-                    </div>
-                </div>
-                <div class="game-controls" tabindex="1">
-                    <form class="controls-form" novalidate="">
-                        <div class="controls-form__buttons">
-                            <div class="switch-game-btn tutorial-step-threshold on">Low</div>
-                            <div class="game-buttons-wrapper">
-                                <button type="submit" id="game-submit-button"
-                                        class="tutorial-step-game-main-button game-main-button">ROLL
-                                </button>
-                            </div>
-                            <div class="switch-game-btn">High</div>
-                        </div>
-                        <div class="controls-form__row row">
-                            <div class="grid grid_sm2">
-                                <div id="bet-amount-item" class="grid__item">
-                                    <div class="element-input element-input_text element-input_default tutorial-step-bet-amount">
-                                        <label for="bet-amount-input">BET AMOUNT</label>
-                                        <div class="element-input__holder">
-                                            <div class="popover top" role="tooltip">
-                                                <div class="arrow"></div>
-                                                <div class="popover-content"></div>
-                                            </div>
-                                            <div class="element-input__group"><span
-                                                        class="element-input__addon element-input__addon_fill"><span
-                                                            class="fab fa-bitcoin"></span></span><input
-                                                        type="text" name="bet-amount-input" class="form-control"
-                                                        placeholder="0.00000000" value="0.00000010">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="chance-item" class="grid__item">
-                                    <div class="element-input element-input_text element-input_default tutorial-step-win-chance">
-                                        <label for="chance">WIN CHANCE</label>
-                                        <div class="element-input__holder">
-                                            <div class="popover top" role="tooltip">
-                                                <div class="arrow"></div>
-                                                <div class="popover-content"></div>
-                                            </div>
-                                            <div class="element-input__group"><input type="text" class="form-control"
-                                                                                     name="chance-input"
-                                                                                     placeholder="50.00%"
-                                                                                     value="50%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="payout-item" class="grid__item">
-                                    <div class="element-input element-input_text element-input_default">
-                                        <label for="payout">PAYOUT</label>
-                                        <div class="element-input__holder">
-                                            <div class="popover top" role="tooltip">
-                                                <div class="arrow"></div>
-                                                <div class="popover-content"></div>
-                                            </div>
-                                            <div class="element-input__group"><input type="text" class="form-control"
-                                                                                     name="payout-input"
-                                                                                     placeholder="0.00000000"
-                                                                                     value="1.98x">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="profit-item" class="grid__item">
-                                    <div class="element-input element-input_text element-input_default">
-                                        <label for="profit_amount">PROFIT ON WIN</label>
-                                        <div class="element-input__holder">
-                                            <div class="popover top" role="tooltip">
-                                                <div class="arrow"></div>
-                                                <div class="popover-content"></div>
-                                            </div>
-                                            <div class="element-input__group"><span
-                                                        class="element-input__addon element-input__addon_fill"><span
-                                                            class="fab fa-bitcoin"></span></span><input
-                                                        type="text" name="profit-amount-input" class="form-control"
-                                                        value="0.00000009" min="0.0000001"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="content-block">
+{{--    <div class="container">--}}
+{{--        <div id="game" class="game">--}}
+{{--            <canvas id="game-area" style="display: none;"></canvas>--}}
+{{--            <div class="game__field">--}}
+{{--                <div class="game-process">--}}
+{{--                    <div class="game-bonus-element"></div>--}}
+{{--                    <div class="game-process__top">--}}
+{{--                        <div class="game-information tutorial-step-stats">--}}
+{{--                            <ul class="game-information__list">--}}
+{{--                                <li>--}}
+{{--                                    <div class="game-number">Luck <span--}}
+{{--                                                class="number number_luck">N/A</span></div>--}}
+{{--                                    <span class="separator-dot"><span></span></span></li>--}}
+{{--                                <li>--}}
+{{--                                    <div class="game-number">Bets <span class="number">0</span></div>--}}
+{{--                                    <span class="separator-dot"><span></span></span></li>--}}
+{{--                                <li>--}}
+{{--                                    <div class="game-number">Wins <span class="number">0</span></div>--}}
+{{--                                    <span class="separator-dot"><span></span></span></li>--}}
+{{--                                <li>--}}
+{{--                                    <div class="game-number">Losses <span class="number">0</span></div>--}}
+{{--                                    <span class="separator-dot"><span></span></span></li>--}}
+{{--                                <li>--}}
+{{--                                    <div class="game-number">Wagered <span class="number"><span--}}
+{{--                                                    class="fab fa-bitcoin"></span>&nbsp;0.00000000</span>--}}
+{{--                                    </div>--}}
+{{--                                    <span class="separator-dot"><span></span></span></li>--}}
+{{--                                <li>--}}
+{{--                                    <div class="game-number">Profit <span class="number"><span--}}
+{{--                                                    class="fab fa-bitcoin"></span>&nbsp; <span--}}
+{{--                                                    class="number-profit">0.00000000</span></span></div>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                            <div data-tip="Reset game stats" class="button_link button_link-small"--}}
+{{--                                 currentitem="false"><span class="icon-refresh"></span></div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="game-animation tutorial-step-greeting" id="game-animation">--}}
+{{--                        <div class="game-animation__low"></div>--}}
+{{--                        <div class="game-animation__number">--}}
+{{--                            <div class="game-animation__number-wrapper">--}}
+{{--                                <div class="game-animation__number-digit-wrapper">--}}
+{{--                                    <div class="game-animation__number-digit">0</div>--}}
+{{--                                </div>--}}
+{{--                                <div class="game-animation__number-frame">--}}
+{{--                                    <svg viewBox="0 0 130 130">--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_0"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_1"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_2"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_3"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_4"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_5"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_6"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_7"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_8"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_9"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_10"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_11"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg1.svg')}}#Layer_12"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                    </svg>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="game-animation__number-wrapper">--}}
+{{--                                <div class="game-animation__number-digit-wrapper">--}}
+{{--                                    <div class="game-animation__number-digit">0</div>--}}
+{{--                                </div>--}}
+{{--                                <div class="game-animation__number-frame">--}}
+{{--                                    <svg viewBox="0 0 130 130">--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_0"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_1"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_2"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_3"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_4"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_5"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_6"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_7"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_8"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_9"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_10"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_11"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg4.svg')}}#Layer_12"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                    </svg>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="game-animation__number-wrapper">--}}
+{{--                                <div class="game-animation__number-digit-wrapper">--}}
+{{--                                    <div class="game-animation__number-digit">0</div>--}}
+{{--                                </div>--}}
+{{--                                <div class="game-animation__number-frame">--}}
+{{--                                    <svg viewBox="0 0 130 130">--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_0"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_1"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_2"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_3"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_4"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_5"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_6"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_7"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_8"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_9"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_10"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_11"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg2.svg')}}#Layer_12"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                    </svg>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="game-animation__number-wrapper">--}}
+{{--                                <div class="game-animation__number-digit-wrapper">--}}
+{{--                                    <div class="game-animation__number-digit">0</div>--}}
+{{--                                </div>--}}
+{{--                                <div class="game-animation__number-frame">--}}
+{{--                                    <svg viewBox="0 0 130 130">--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_0"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_1"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_2"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_3"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_4"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_5"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_6"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_7"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_8"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_9"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_10"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_11"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                        <use class="egg-frame"--}}
+{{--                                             xlink:href="{{asset('images/egg3.svg')}}#Layer_12"--}}
+{{--                                             style="visibility: hidden;"></use>--}}
+{{--                                    </svg>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="game-animation__high">&lt; 5000</div>--}}
+{{--                    </div>--}}
+{{--                    <div class="game-circle-section">--}}
+{{--                        <div class="game-bets"></div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="game-controls" tabindex="1">--}}
+{{--                    <form class="controls-form" novalidate="">--}}
+{{--                        <div class="controls-form__buttons">--}}
+{{--                            <div class="switch-game-btn tutorial-step-threshold on">Low</div>--}}
+{{--                            <div class="game-buttons-wrapper">--}}
+{{--                                <button type="submit" id="game-submit-button"--}}
+{{--                                        class="tutorial-step-game-main-button game-main-button">ROLL--}}
+{{--                                </button>--}}
+{{--                            </div>--}}
+{{--                            <div class="switch-game-btn">High</div>--}}
+{{--                        </div>--}}
+{{--                        <div class="controls-form__row row">--}}
+{{--                            <div class="grid grid_sm2">--}}
+{{--                                <div id="bet-amount-item" class="grid__item">--}}
+{{--                                    <div class="element-input element-input_text element-input_default tutorial-step-bet-amount">--}}
+{{--                                        <label for="bet-amount-input">BET AMOUNT</label>--}}
+{{--                                        <div class="element-input__holder">--}}
+{{--                                            <div class="popover top" role="tooltip">--}}
+{{--                                                <div class="arrow"></div>--}}
+{{--                                                <div class="popover-content"></div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="element-input__group"><span--}}
+{{--                                                        class="element-input__addon element-input__addon_fill"><span--}}
+{{--                                                            class="fab fa-bitcoin"></span></span><input--}}
+{{--                                                        type="text" name="bet-amount-input" class="form-control"--}}
+{{--                                                        placeholder="0.00000000" value="0.00000010">--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div id="chance-item" class="grid__item">--}}
+{{--                                    <div class="element-input element-input_text element-input_default tutorial-step-win-chance">--}}
+{{--                                        <label for="chance">WIN CHANCE</label>--}}
+{{--                                        <div class="element-input__holder">--}}
+{{--                                            <div class="popover top" role="tooltip">--}}
+{{--                                                <div class="arrow"></div>--}}
+{{--                                                <div class="popover-content"></div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="element-input__group"><input type="text" class="form-control"--}}
+{{--                                                                                     name="chance-input"--}}
+{{--                                                                                     placeholder="50.00%"--}}
+{{--                                                                                     value="50%"></div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div id="payout-item" class="grid__item">--}}
+{{--                                    <div class="element-input element-input_text element-input_default">--}}
+{{--                                        <label for="payout">PAYOUT</label>--}}
+{{--                                        <div class="element-input__holder">--}}
+{{--                                            <div class="popover top" role="tooltip">--}}
+{{--                                                <div class="arrow"></div>--}}
+{{--                                                <div class="popover-content"></div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="element-input__group"><input type="text" class="form-control"--}}
+{{--                                                                                     name="payout-input"--}}
+{{--                                                                                     placeholder="0.00000000"--}}
+{{--                                                                                     value="1.98x">--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div id="profit-item" class="grid__item">--}}
+{{--                                    <div class="element-input element-input_text element-input_default">--}}
+{{--                                        <label for="profit_amount">PROFIT ON WIN</label>--}}
+{{--                                        <div class="element-input__holder">--}}
+{{--                                            <div class="popover top" role="tooltip">--}}
+{{--                                                <div class="arrow"></div>--}}
+{{--                                                <div class="popover-content"></div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="element-input__group"><span--}}
+{{--                                                        class="element-input__addon element-input__addon_fill"><span--}}
+{{--                                                            class="fab fa-bitcoin"></span></span><input--}}
+{{--                                                        type="text" name="profit-amount-input" class="form-control"--}}
+{{--                                                        value="0.00000009" min="0.0000001"></div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </form>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="content-block">--}}
 {{--            <div class="play-block-content">--}}
 {{--                <div id="react-bets">--}}
 {{--                    <div id="bets-stats">--}}
@@ -613,42 +613,8 @@
 {{--                </div>--}}
 {{--            </div>--}}
 
-            <div class="play-block-content card">
-                <div class="block block_default">
-                    <p>DuckDice is a design-driven Bitcoin dice game with Faucet. Aiming to become the best
-                        cryptocurrency dice game available on the internet! We are working hard to maintain our
-                        reputation of fair Bitcoin dice among many other online casinos and your trust is our
-                        priority.</p>
-                    <p>DuckDice offers free features:</p>
-
-                    <ul>
-                        <li>Multiple currencies: Bitcoin (BTC), Litecoin (LTC), Dogecoin (DOGE), Ethereum (ETH), Dash
-                            (DASH), Bitcoin Cash (BCH), Monero (XMR), Ripple (XRP), Ethereum Classic (ETC), Bitcoin Gold
-                            (BTG), Stellar (XLM), Zcash (ZEC), Tether (USDT), Duck's Toilet Paper (DTP);
-                        </li>
-                        <li>Free Bitcoin Faucet</li>
-                        <li>Rain that triggers coins giveaway</li>
-                        <li>Tips</li>
-                        <li>Affiliate Program</li>
-                        <li>Autoplay that allows you to use Bitcoin dice roll automatically (aka Autobet)</li>
-                        <li>Various bonuses will take place from time to time</li>
-                        <li>Bitcoin dice mobile version</li>
-                        <li>Telegram Game Bot</li>
-                    </ul>
-                    <p>By using Faucet you can experience a game in a "Bitcoin dice simulator" mode which will cost you
-                        absolutely nothing. There are many cryptocurrency game Faucets available but our Faucet is
-                        highly competitive! Our Faucet allows you to play without any risk, satoshis are given to you
-                        for free so there is no reason to worry about losing it, you can check various gambling
-                        strategies instead.</p>
-                    <p>Feel free to join <a class="link" href="https://bitcointalk.org/index.php?topic=1676313"
-                                            target="_blank" rel="noopener noreferrer">our community</a> under the
-                        Bitcoin dice gambling topic on the biggest Bitcoin forum. You are always welcome to make your
-                        improvement suggestions regarding our game, with your help we'll become one of the top Bitcoin
-                        gambling!</p>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--        </div>--}}
+{{--    </div>--}}
     </div>
     <script src="{{asset('js/bootstrap.js')}}"></script>
     <script src="{{asset('js/app.js')}}"></script>

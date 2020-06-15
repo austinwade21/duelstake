@@ -91,6 +91,7 @@ form{
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
+  overflow: auto;
 }
 
 .game-information__list {
@@ -108,6 +109,7 @@ form{
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  min-width: 560px;
 }
 
 .game-information__list li {
@@ -278,6 +280,7 @@ canvas#game-area {
   width: 7.5rem;
   min-width: 7.5rem;
   text-align: center;
+  min-height: 40px;
 }
 
 .game-animation__number, .game-animation__number-wrapper {
@@ -368,12 +371,12 @@ canvas#game-area {
 }
 .dark .switch-game-btn.on, .dark .switch-game-btn_disabled.on, .dark .switch-game-btn_disabled.on:hover {
   color: #f6a623;
-  //background-color: #323a42;
+  background-color: #323a42;
 }
 
 .dark .switch-game-btn {
-  //background-color: #465059;
-  //color: #8a99a5;
+  background-color: #465059;
+  color: #8a99a5;
 }
 .switch-game-btn.on {
   font-weight: 600;
@@ -864,10 +867,113 @@ body {
 
 @-webkit-keyframes spin {
   from {
-    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
   to {
-    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
+
+/* responsive design */
+
+@media (max-width: 1250px) {
+  .page__main_collapsed .game-animation__number-frame {
+    width:8rem
+  }
+}
+
+@media (max-width: 1200px) {
+  .page__main_collapsed .game-controls .grid {
+    -ms-flex-wrap:wrap;
+    flex-wrap: wrap
+  }
+
+  .page__main_collapsed .game-controls .grid .grid__item {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 50%;
+    flex: 1 0 50%
+  }
+
+  .page__main_collapsed .tutorial-step-stats .game-info__reset-button {
+    display: none
+  }
+}
+
+@media (max-width: 993px) {
+  .purse {
+    margin: 16px;
+  }
+  .coin{
+    width: 75px;
+    height: 75px;
+  }
+  .coin .label{
+    font-size: 40px;
+  }
+
+  .coin .side .spoke {
+    height: 75px;
+  }
+  .coin .front {
+    -webkit-transform: translateZ(5px);
+  }
+  .coin .back {
+    -webkit-transform: translateZ(-5px) rotateY(180deg);
+  }
+
+  .coin .side {
+    -webkit-transform: translateX(31.5px);
+  }
+
+  .page__main_collapsed .game-animation__number-digit-wrapper {
+    font-size:3rem;
+    line-height: 3rem
+  }
+
+  .game-animation__number-frame {
+    width: 11rem;
+    height: 15rem
+  }
+
+  .page__main_collapsed .game-animation__number-frame {
+    width: 6rem;
+    height: 8rem
+  }
+  .page__main_collapsed .game-process {
+    min-height:180px
+  }
+
+  div#game {
+    padding-bottom:30px
+  }
+}
+
+@media (max-width: 767px) {
+  .game-animation__high,.game-animation__low {
+    font-size:2rem;
+    line-height: 2rem;
+    width: 7rem;
+    min-width: 7rem
+  }
+  div#game {
+    width:100%;
+    padding: 20px 10px 30px
+  }
+  .game-animation{
+    display: block;
+  }
+  .controls-form .row {
+    padding: 0 2px;
+  }
+  .grid {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .grid_sm2 .grid__item {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 50%;
+    flex: 1 0 50%;
   }
 }
 
@@ -882,3 +988,114 @@ body {
     margin: 1.75rem auto;
   }
 }
+
+@media (max-width: 640px) {
+  .game-animation__high, .game-animation__low {
+    font-size: 17px;
+    line-height: 17px;
+    width: 60px;
+    min-width: 60px;
+  }
+  .purse {
+    margin: 2px;
+  }
+  .coin{
+    width: 75px;
+    height: 75px;
+  }
+  .coin .label{
+    font-size: 40px;
+  }
+
+  .coin .side .spoke {
+    height: 75px;
+  }
+  .coin .front {
+    -webkit-transform: translateZ(5px);
+  }
+  .coin .back {
+    -webkit-transform: translateZ(-5px) rotateY(180deg);
+  }
+
+  .coin .side {
+    -webkit-transform: translateX(31.5px);
+  }
+  .game-process {
+    min-height:240px
+  }
+
+  .game-animation__number-frame {
+    width: 8.5rem
+  }
+
+  .game-animation__high,.game-animation__low {
+    font-size: 1.9rem;
+    line-height: 1.9rem;
+    width: 6.7rem;
+    min-width: 6.7rem
+  }
+
+  .d-sm-block {
+    display: block!important;
+  }
+  .nav-tabs-custom .nav-item .nav-link {
+    border: none;
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 12px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .game-process {
+    min-height:210px;
+    padding: 0 16px;
+  }
+
+  .game-animation__number-digit-wrapper {
+    font-size: 4.5rem;
+    line-height: 4.5rem
+  }
+
+  .page__main_collapsed .game-animation__number-digit-wrapper {
+    font-size: 3.5rem;
+    line-height: 3.5rem
+  }
+
+  .game-animation__number-frame {
+    width: 5.7rem;
+    height: 12rem
+  }
+
+  .page__main_collapsed .game-animation__number-frame {
+    width: 7rem;
+    height: 9rem
+  }
+
+  #game-submit-button{
+    min-width: 103px;
+  }
+  .game-buttons-wrapper{
+    min-width: 150px;
+    padding: 0 10px;
+  }
+  .game-animation{
+    min-height: 188px;
+  }
+}
+
+@media (max-width: 374px) {
+  .game-animation__high,.game-animation__low {
+    font-size:1.1rem;
+    line-height: 1.4rem;
+    width: 3.5rem;
+    min-width: 3.5rem
+  }
+  .nav-tabs-custom .nav-item .nav-link {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+}
+

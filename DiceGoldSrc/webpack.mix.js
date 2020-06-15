@@ -1,5 +1,11 @@
 const mix = require('laravel-mix');
-
+mix.options({
+    postCss: [
+        require('autoprefixer')({
+            browsers: ['last 40 versions'],
+        })
+    ]
+});
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
