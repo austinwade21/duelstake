@@ -39,6 +39,10 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     public function social(){
-        return $this->belongsTo('\App\SocialData');
+        return $this->belongsTo(SocialData::class);
+    }
+
+    public function bets(){
+        return $this->hasMany(Bet::class);
     }
 }

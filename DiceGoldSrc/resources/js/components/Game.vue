@@ -77,13 +77,13 @@
             <div class="game-controls" tabindex="1">
                 <form class="controls-form" novalidate="">
                     <div class="controls-form__buttons">
-                        <div class="switch-game-btn tutorial-step-threshold on">Low</div>
+                        <div class="switch-game-btn tutorial-step-threshold on" id="game-type-low" @click="changeGameType('low')">Low</div>
                         <div class="game-buttons-wrapper">
                             <button type="submit" id="game-submit-button" @click="roll"
                                     class="tutorial-step-game-main-button game-main-button">ROLL
                             </button>
                         </div>
-                        <div class="switch-game-btn">High</div>
+                        <div class="switch-game-btn" id="game-type-high" @click="changeGameType('high')">High</div>
                     </div>
                     <div class="controls-form__row row">
                         <div class="grid grid_sm2">
@@ -100,18 +100,18 @@
                                                 <span class="fab fa-bitcoin"></span>
                                             </span>
                                             <input id="bet-amount-input"
-                                                   type="text"
+                                                   v-model="bet.bet_amount"
                                                    name="bet-amount-input"
                                                    class="form-control"
                                                    placeholder="0.00000000"
-                                                   value="0.00000010"/>
+                                                   />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div id="chance-item" class="grid__item">
                                 <div class="element-input element-input_text element-input_default tutorial-step-win-chance">
-                                    <label for="chance-input">WIN CHANCE</label>
+                                    <label for="chance-input">WIN CHANCE(%)</label>
                                     <div class="element-input__holder">
                                         <div class="popover top" role="tooltip">
                                             <div class="arrow"></div>
@@ -120,25 +120,27 @@
                                         <div class="element-input__group">
                                             <input type="text" class="form-control"
                                                    name="chance-input" id="chance-input"
-                                                   placeholder="50.00%"
-                                                   value="50%"/>
+                                                   placeholder="50.00"
+                                                   v-model="bet.chance"
+                                                   />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div id="payout-item" class="grid__item">
                                 <div class="element-input element-input_text element-input_default">
-                                    <label for="payout-input">PAYOUT</label>
+                                    <label for="payout-input">PAYOUT(x)</label>
                                     <div class="element-input__holder">
                                         <div class="popover top">
                                             <div class="arrow"></div>
                                             <div class="popover-content"></div>
                                         </div>
                                         <div class="element-input__group">
-                                            <input type="text" class="form-control"
+                                            <input class="form-control"
                                                    name="payout-input" id="payout-input"
                                                    placeholder="0.00000000"
-                                                   value="1.98x"/>
+                                                   v-model="bet.payout"
+                                                   />
                                         </div>
                                     </div>
                                 </div>
@@ -159,7 +161,7 @@
                                                    type="text"
                                                    name="profit-amount-input"
                                                    class="form-control"
-                                                   value="0.00000009"
+                                                   v-model="bet.profit"
                                                    min="0.0000001"/>
                                         </div>
                                     </div>
@@ -203,26 +205,71 @@
                     profit: 654321,
                 },
                 mute: false,
-                numbers:{ n1: 2, n2: 3, n3: 1, n4: 8, }
+                numbers:{ n1: 2, n2: 3, n3: 1, n4: 8, },
+                bet: {
+                    bet_amount: '0.0000001',
+                    payout: '1.98',
+                    chance: '40',
+                    game_number: 1234,
+                    game_type: 'low',
+                    roll: 4532,
+                    profit: '0.00000009',
+                }
             }
         },
         methods: {
             roll(e) {
                 e.preventDefault();
                 var coin = $('.coin');
-                coin.removeClass("spin")
+                coin.removeClass("spin");
                 coin.width();
                 coin.addClass("spin");
-
+                coin.addClass("repeat");
                 setTimeout(() => {
-                    this.numbers.n1 = Math.floor(Math.random() * 10);
-                    this.numbers.n2 = Math.floor(Math.random() * 10);
-                    this.numbers.n3 = Math.floor(Math.random() * 10);
-                    this.numbers.n4 = Math.floor(Math.random() * 10);
-                    }, 1000);
+                    this.numbers.n1 = 0;
+                    this.numbers.n2 = 0;
+                    this.numbers.n3 = 0;
+                    this.numbers.n4 = 0;
+                }, 300);
+
+                var n1 = Math.floor(Math.random() * 10);
+                var n2 = Math.floor(Math.random() * 10);
+                var n3 = Math.floor(Math.random() * 10);
+                var n4 = Math.floor(Math.random() * 10);
+
+                axios.post('api/bet/store', {
+                    'api_token': window.api_token,
+                    'bet_amount': this.bet.bet_amount,
+                    'payout': this.bet.payout,
+                    'chance': this.bet.chance,
+                    'game_number': this.bet.game_number,
+                    'game_type': this.bet.game_type,
+                    'roll': n1*1000 + n2*100 + n3*10 + n4,
+                    'profit': this.bet.profit,
+                }).then(response => {
+                    this.bet.roll = response.data.data.roll;
+                    this.numbers.n1 = Math.floor(this.bet.roll / 1000);
+                    this.numbers.n2 = Math.floor((this.bet.roll % 1000)/ 100);
+                    this.numbers.n3 = Math.floor((this.bet.roll % 100)/ 10);
+                    this.numbers.n4 = this.bet.roll % 10;
+                    coin.removeClass("repeat");
+                });
 
                 this.gameInformation.wagered = Math.floor(Math.random() * 100000);
-            }
+            },
+            changeGameType(type, e){
+                this.bet.game_type = type;
+                var low = $('#game-type-low');
+                var high = $('#game-type-high');
+                if(type === 'low'){
+                    low.addClass('on');
+                    high.removeClass('on');
+                }
+                else{
+                    low.removeClass('on');
+                    high.addClass('on');
+                }
+            },
         },
     }
 </script>

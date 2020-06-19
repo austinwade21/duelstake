@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'DiceGold') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -318,6 +318,9 @@
     <script src="{{ asset('theme/js/app.js') }}"></script>
     <script>
         $( document ).ready(function() {
+            @auth
+            window.api_token = '{{\Illuminate\Support\Facades\Auth::user()->api_token}}';
+            @endauth
             $("#change-password-form").submit(function(e){
                 $.ajax
                 ({

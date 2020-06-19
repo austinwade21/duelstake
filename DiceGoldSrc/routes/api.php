@@ -58,6 +58,28 @@ Route::middleware('auth:api')->post('/user/setHideUserName','UsersController@set
 | URL:            /api/user/social/unlink
 | Controller:     UsersController@socialUnlink
 | Method:         POST
-| Description:    Updates the authenticated user's Hide My User Name
+| Description:    Unlink Social account
 */
 Route::middleware('auth:api')->post('/user/social/unlink', 'UsersController@socialUnlink');
+
+/*
+|-------------------------------------------------------------------------------
+| Store a New Bet
+|-------------------------------------------------------------------------------
+| URL:            /api/bet/store
+| Controller:     BetController@store
+| Method:         POST
+| Description:    Store Bet data
+*/
+Route::middleware('auth:api')->post('/bet/store', 'BetController@store');
+
+/*
+|-------------------------------------------------------------------------------
+| Store a New Bet
+|-------------------------------------------------------------------------------
+| URL:            /api/bet/index
+| Controller:     BetController@index
+| Method:         GET
+| Description:    List Bet History
+*/
+Route::middleware('auth:api')->get('/bet/index', 'BetController@index');
