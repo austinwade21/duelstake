@@ -47,6 +47,8 @@
 
 <script>
 
+    import * as echo from "../laravel-echo-setup.js";
+
     import Game from "./Game";
     import BetsStats from "./BetsStats";
 

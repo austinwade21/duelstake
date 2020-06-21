@@ -21,4 +21,5 @@ mix.setPublicPath(path.normalize('../public_html'));
 
 mix.js('resources/js/app.js', 'js')
     .js('resources/js/bootstrap.js', 'js')
+    .js('resources/js/laravel-echo-setup.js', 'js')
     .sass('resources/sass/app.scss', 'css');

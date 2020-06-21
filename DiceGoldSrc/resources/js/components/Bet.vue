@@ -14,7 +14,7 @@
                 class="bonus-decor">{{betAmount}}</strong></span></td>
         <td v-if="!hidden.includes('payout')" class="cell-hidden cell-hidden_2">{{payout}}</td>
         <td v-if="!hidden.includes('chance')" class="cell-hidden cell-hidden_2">{{chance}}%</td>
-        <td v-if="!hidden.includes('game')" class="cell-hidden cell-hidden_1">{{game}}</td>
+        <td v-if="!hidden.includes('gameNumber')" class="cell-hidden cell-hidden_1">{{gameNumber}}</td>
         <td v-if="!hidden.includes('roll')" class="cell-hidden cell-hidden_3">{{roll}}</td>
         <td v-if="profit<0 && !hidden.includes('profit')"><span class="amount-icon bet loss"><span
                 class="fab fa-bitcoin"></span> <strong>{{profit}}</strong></span>
@@ -28,7 +28,7 @@
 <script>
     export default {
         name: "Bet",
-        props: ['id', 'time', 'username', 'betAmount', 'payout', 'chance', 'game', 'roll', 'profit', 'hidden'],
+        props: ['id', 'time', 'username', 'betAmount', 'payout', 'chance', 'gameNumber', 'gameType', 'roll', 'profit', 'hidden'],
     }
 </script>
 

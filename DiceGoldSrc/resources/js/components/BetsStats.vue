@@ -50,11 +50,12 @@
                         <Bet v-for="bet in allBets"
                              v-bind:key="bet.id"
                              :id="bet.id"
-                             :time="bet.time"
+                             :time="bet.created_at"
                              :username="bet.username"
-                             :bet-amount="bet.betAmount"
+                             :bet-amount="bet.bet_amount"
                              :payout="bet.payout"
-                             :game="bet.game"
+                             :game-number="bet.game_number"
+                             :game-type="bet.game_type"
                              :chance="bet.chance"
                              :roll="bet.roll"
                              :profit="bet.profit"
@@ -81,11 +82,12 @@
                         <Bet v-for="bet in myBets"
                              v-bind:key="bet.id"
                              :id="bet.id"
-                             :time="bet.time"
+                             :time="bet.created_at"
                              :username="bet.username"
-                             :bet-amount="bet.betAmount"
+                             :bet-amount="bet.bet_amount"
                              :payout="bet.payout"
-                             :game="bet.game"
+                             :game-number="bet.game_number"
+                             :game-type="bet.game_type"
                              :chance="bet.chance"
                              :roll="bet.roll"
                              :profit="bet.profit"
@@ -118,11 +120,12 @@
                         <Bet v-for="bet in highRollers"
                              v-bind:key="bet.id"
                              :id="bet.id"
-                             :time="bet.time"
+                             :time="bet.created_at"
                              :username="bet.username"
-                             :bet-amount="bet.betAmount"
+                             :bet-amount="bet.bet_amount"
                              :payout="bet.payout"
-                             :game="bet.game"
+                             :game-number="bet.game_number"
+                             :game-type="bet.game_type"
                              :chance="bet.chance"
                              :roll="bet.roll"
                              :profit="bet.profit"
@@ -147,11 +150,12 @@
                         <Bet v-for="bet in jackpots"
                              v-bind:key="bet.id"
                              :id="bet.id"
-                             :time="bet.time"
+                             :time="bet.created_at"
                              :username="bet.username"
-                             :bet-amount="bet.betAmount"
+                             :bet-amount="bet.bet_amount"
                              :payout="bet.payout"
-                             :game="bet.game"
+                             :game-number="bet.game_number"
+                             :game-type="bet.game_type"
                              :chance="bet.chance"
                              :roll="bet.roll"
                              :profit="bet.profit"
@@ -170,6 +174,7 @@
 <script>
     import Bet from "./Bet";
 
+
     export default {
         name: "BetsStats",
         components: {
@@ -179,15 +184,17 @@
             return {
                 allBets: [
                     {
-                        id: '88b7edd57b5',
-                        time: '17:17:41',
-                        username: 'ajib8888',
-                        betAmount: '0.00000266',
-                        payout: '0.34x',
-                        chance: '50',
-                        game: '< 5000',
-                        roll: '2537',
-                        profit: -0.00000250,
+                        bet_amount: "0.0000001",
+                        chance: "40",
+                        created_at: "2020-06-21T12:04:30.000000Z",
+                        game_number: 1234,
+                        game_type: "low",
+                        id: 61,
+                        payout: "1.98",
+                        profit: "0.00000009",
+                        roll: 9491,
+                        updated_at: "2020-06-21T12:04:30.000000Z",
+                        user_id: 1
                     },
                     {
                         id: 'ebe4d6684d4',
@@ -344,6 +351,13 @@
                 ],
             }
         },
+        created() {
+            window.Echo.channel('bets-channel')
+                .listen('.BetCreated', (data) => {
+                    console.log(data);
+                    this.allBets.push(data.bet_data);
+                });
+        }
     }
 </script>
 

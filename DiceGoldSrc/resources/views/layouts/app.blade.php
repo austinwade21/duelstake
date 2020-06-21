@@ -24,6 +24,10 @@
     <!-- App Css-->
     <link href="{{ asset('theme/css/app-dark.min.css') }}" id="app-style" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('css/app.css') }}" id="app-style" rel="stylesheet" type="text/css"/>
+    <script src="//{{ request()->getHost() }}:{{env('LARAVEL_ECHO_PORT')}}/socket.io/socket.io.js"></script>
+    <script>
+        window.laravel_echo_port='{{env("LARAVEL_ECHO_PORT")}}';
+    </script>
 
 </head>
 <body data-topbar="dark" class="dark" data-layout="horizontal">

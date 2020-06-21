@@ -1,0 +1,32 @@
+{
+	"authHost": "http://localhost",
+	"authEndpoint": "/broadcasting/auth",
+	"clients": [],
+	"database": "redis",
+	"databaseConfig": {
+		"redis": {},
+		"sqlite": {
+			"databasePath": "/database/laravel-echo-server.sqlite"
+		}
+	},
+	"devMode": true,
+	"host": null,
+	"port": "6001",
+	"protocol": "https",
+	"socketio": {},
+	"secureOptions": 67108864,
+	"sslCertPath": "/var/cpanel/ssl/apache_tls/dicegold.com/combined",
+	"sslKeyPath": "/var/cpanel/ssl/apache_tls/dicegold.com/combined",
+	"sslCertChainPath": "/var/cpanel/ssl/apache_tls/dicegold.com/combined",
+	"sslPassphrase": "",
+	"subscribers": {
+		"http": true,
+		"redis": true
+	},
+	"apiOriginAllow": {
+		"allowCors": false,
+		"allowOrigin": "",
+		"allowMethods": "",
+		"allowHeaders": ""
+	}
+}

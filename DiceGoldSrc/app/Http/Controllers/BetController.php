@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Bet;
+use App\Events\BetCreated;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Notification;
 
 class BetController extends Controller
 {
@@ -45,6 +47,11 @@ class BetController extends Controller
             'roll' => $request->roll,
             'profit' => $request->profit,
         ]);
+
+        $betEvent = new BetCreated();
+        $betEvent->data = $bet;
+        $betEvent->data->username = auth()->user()->user_name;
+        event($betEvent);
 
         return response()->json([
             'status' => (bool)$bet,
