@@ -7,7 +7,6 @@
 
 import App from "./components/App";
 
-
 window.Vue = require('vue');
 
 /**
@@ -29,8 +28,25 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+// Filters
+
+Vue.filter("oneDecimal", function (value) {
+    return (Math.round(parseFloat(value) * 100) / 100).toFixed(1);
+});
+
+Vue.filter("eightDecimal", function (value) {
+    return parseFloat(value).toFixed(8);
+});
+
+Vue.filter("toLocalTimeString", function (value) {
+    var d = new Date(value);
+    return d.toLocaleTimeString();
+});
+
+
 const app = new Vue({
     el: '#app',
     components: { App },
     render: h => h(App)
 });
+

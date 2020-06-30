@@ -2,22 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a922c752-ec18-452c-933e-8ad08e91900c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DiceGoldSrc/app/Events/BetCreated.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiceGoldSrc/laravel-echo-server.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiceGoldSrc/laravel-echo-start.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/laravel-echo-setup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/BetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/BetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DiceGoldSrc/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Bet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Bet.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/BetsStats.vue" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/BetsStats.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Game.vue" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Game.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DiceGoldSrc/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/BetController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+            <state relative-caret-position="265">
+              <caret line="156" column="83" lean-forward="true" selection-start-line="156" selection-start-column="83" selection-end-line="156" selection-end-column="83" />
               <folding>
                 <element signature="e#40#52#0#PHP" expanded="true" />
               </folding>
@@ -44,54 +38,55 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/User.php">
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="19" column="18" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="18" />
+            <state relative-caret-position="399">
+              <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
               <folding>
-                <element signature="e#23#69#0#PHP" expanded="true" />
+                <element signature="e#40#59#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Events/BetCreated.php">
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+            <state relative-caret-position="202">
+              <caret line="95" column="79" selection-start-line="95" selection-start-column="79" selection-end-line="95" selection-end-column="79" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/laravel-echo-server.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/laravel-echo-setup.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/BetsStats.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="158" selection-start-line="158" selection-end-line="158" />
+            <state relative-caret-position="-74">
+              <caret line="116" column="50" selection-start-line="116" selection-start-column="50" selection-end-line="116" selection-end-column="50" />
               <folding>
-                <element signature="n#ul#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
-                <element signature="e#9943#11662#0" />
                 <element signature="e#11693#12566#0" />
-                <element signature="e#12594#14313#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/views/layouts/app.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="439">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Game.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="163" column="59" selection-start-line="163" selection-start-column="59" selection-end-line="163" selection-end-column="59" />
+              <folding>
+                <element signature="e#2601#2605#0" expanded="true" />
+                <element signature="e#4156#4160#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,26 +95,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Bet.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+            <state relative-caret-position="84">
+              <caret line="4" column="111" selection-start-line="4" selection-start-column="111" selection-end-line="4" selection-end-column="111" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/.env">
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="278">
+              <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/config/database.php">
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="992">
-              <caret line="129" selection-start-line="129" selection-end-line="129" />
+            <state relative-caret-position="356">
+              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -176,7 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DiceGoldSrc/server.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_05_31_175951_added_user_profile_fields.php" />
@@ -203,7 +197,6 @@
         <option value="$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/UsersController.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/config/filesystems.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/bootstrap.js" />
-        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/app.js" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/public_html/theme/css/app-dark.css" />
         <option value="$PROJECT_DIR$/public_html/theme/css/app-dark.min.css" />
@@ -212,21 +205,23 @@
         <option value="$PROJECT_DIR$/DiceGoldSrc/app/Bet.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/vendor/laravel/framework/src/Illuminate/Http/Request.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/sass/app.scss" />
-        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Game.vue" />
-        <option value="$PROJECT_DIR$/DiceGoldSrc/routes/api.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/laravel-echo-setup.js" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/webpack.mix.js" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/laravel-echo-server.json" />
-        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/App.vue" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/.env" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/config/database.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/app/Events/BetCreated.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/laravel-echo-start.sh" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/README.md" />
-        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/BetsStats.vue" />
-        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Bet.vue" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/views/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/routes/api.php" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/package.json" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/BetController.php" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Game.vue" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/app.js" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Bet.vue" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/BetsStats.vue" />
       </list>
     </option>
   </component>
@@ -375,6 +370,64 @@
             <path>
               <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
               <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
+              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
+              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
+              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
+              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
+              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
+              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
+              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
+              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
               <item name="public_html" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -496,7 +549,7 @@
       <workItem from="1591900380948" duration="17295000" />
       <workItem from="1592107614865" duration="6581000" />
       <workItem from="1592181845940" duration="33413000" />
-      <workItem from="1592565850053" duration="27627000" />
+      <workItem from="1592565850053" duration="63659000" />
     </task>
     <task id="LOCAL-00001" summary="Create project and added auth module">
       <created>1590684916118</created>
@@ -575,11 +628,18 @@
       <option name="project" value="LOCAL" />
       <updated>1592568605771</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added laravel-echo and redis and socket.io for bet created broadcast">
+      <created>1592759274796</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1592759274796</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="279144000" />
+    <option name="totallyTimeSpent" value="315176000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -594,7 +654,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49828178" visible="true" weight="0.1818792" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49828178" visible="true" weight="0.1818792" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329429" />
@@ -606,16 +666,16 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49892703" weight="0.41874084" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49892703" weight="0.3001464" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50107294" side_tool="true" weight="0.3293944" />
-      <window_info anchor="bottom" id="File Transfer" order="12" visible="true" weight="0.329429" />
+      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.329429" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Structure" order="3" sideWeight="0.5017182" weight="0.1590604" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Remote Host" order="5" visible="true" weight="0.18993288" />
+      <window_info active="true" anchor="right" id="Remote Host" order="5" visible="true" weight="0.18993288" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,38 +692,15 @@
     <MESSAGE value="Added Dice game ui and vue components" />
     <MESSAGE value="Fixed responsive game ui" />
     <MESSAGE value="Add feature to store bet data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add feature to store bet data" />
+    <MESSAGE value="Added laravel-echo and redis and socket.io for bet created broadcast" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added laravel-echo and redis and socket.io for bet created broadcast" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public_html/icons/desktop.ini" />
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/config/filesystems.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/ExampleComponent.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/storage/framework/views/f546e01afa36f8017b8dfe52ffe63be68b5af52f.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-816">
           <folding>
             <element signature="e#1279#5588#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1197">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -760,16 +797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
-          <folding>
-            <element signature="e#40#59#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -795,47 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18186">
           <caret line="866" column="9" selection-start-line="866" selection-start-column="9" selection-end-line="866" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2772">
-          <caret line="143" column="20" selection-start-line="143" selection-start-column="20" selection-end-line="143" selection-end-column="20" />
-          <folding>
-            <element signature="e#42#73#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#7#43#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Game.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1659">
-          <caret line="79" column="56" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="80" column="24" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Bet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -870,20 +856,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="28" column="25" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/App.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
@@ -892,13 +864,6 @@
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="e#2644#2691#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/views/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2457">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
@@ -913,27 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="992">
-          <caret line="129" selection-start-line="129" selection-end-line="129" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Events/BetCreated.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/laravel-echo-setup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -963,7 +907,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
+        <state relative-caret-position="-113">
           <caret line="19" column="18" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="18" />
           <folding>
             <element signature="e#23#69#0#PHP" expanded="true" />
@@ -971,32 +915,156 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/BetsStats.vue">
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/UsersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="158" selection-start-line="158" selection-end-line="158" />
+        <state relative-caret-position="-365">
+          <caret line="143" column="20" selection-start-line="143" selection-start-column="20" selection-end-line="143" selection-end-column="20" />
           <folding>
-            <element signature="n#ul#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" />
-            <element signature="e#9943#11662#0" />
-            <element signature="e#11693#12566#0" />
-            <element signature="e#12594#14313#0" />
+            <element signature="e#42#73#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/laravel-echo-setup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Bet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Events/BetCreated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#7#43#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="992">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-252">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-294">
+          <caret line="31" column="139" selection-start-line="31" selection-start-column="139" selection-end-line="31" selection-end-column="139" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/views/auth/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-168">
+          <caret line="10" column="102" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/node_modules/numeral/numeral.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+          <folding>
+            <element signature="e#40#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="95" column="79" selection-start-line="95" selection-start-column="79" selection-end-line="95" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/BetController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="156" column="83" lean-forward="true" selection-start-line="156" selection-start-column="83" selection-end-line="156" selection-end-column="83" />
+          <folding>
+            <element signature="e#40#52#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Game.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="163" column="59" selection-start-line="163" selection-start-column="59" selection-end-line="163" selection-end-column="59" />
+          <folding>
+            <element signature="e#2601#2605#0" expanded="true" />
+            <element signature="e#4156#4160#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Bet.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        <state relative-caret-position="84">
+          <caret line="4" column="111" selection-start-line="4" selection-start-column="111" selection-end-line="4" selection-end-column="111" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/BetController.php">
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+        <state relative-caret-position="278">
+          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/BetsStats.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-74">
+          <caret line="116" column="50" selection-start-line="116" selection-start-column="50" selection-end-line="116" selection-end-column="50" />
           <folding>
-            <element signature="e#40#52#0#PHP" expanded="true" />
+            <element signature="e#11693#12566#0" />
           </folding>
         </state>
       </provider>

@@ -75,7 +75,7 @@ Route::middleware('auth:api')->post('/bet/store', 'BetController@store');
 
 /*
 |-------------------------------------------------------------------------------
-| Store a New Bet
+| Get betting histories
 |-------------------------------------------------------------------------------
 | URL:            /api/bet/index
 | Controller:     BetController@index
@@ -83,3 +83,14 @@ Route::middleware('auth:api')->post('/bet/store', 'BetController@store');
 | Description:    List Bet History
 */
 Route::middleware('auth:api')->get('/bet/index', 'BetController@index');
+
+/*
+|-------------------------------------------------------------------------------
+| Get Betting Statistics
+|-------------------------------------------------------------------------------
+| URL:            /api/bet/statistics
+| Controller:     BetController@statistics
+| Method:         GET
+| Description:    Get Betting Statistics
+*/
+Route::middleware('auth:api')->get('/bet/statistics', 'BetController@statistics');

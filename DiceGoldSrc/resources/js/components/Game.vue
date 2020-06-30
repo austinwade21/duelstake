@@ -23,13 +23,13 @@
                                 <span class="separator-dot"><span></span></span></li>
                             <li>
                                 <div class="game-number">Wagered <span class="number"><span
-                                        class="fab fa-bitcoin"></span>&nbsp;{{gameInformation.wagered}}</span>
+                                        class="fab fa-bitcoin"></span>&nbsp;{{gameInformation.wagered | eightDecimal}}</span>
                                 </div>
                                 <span class="separator-dot"><span></span></span></li>
                             <li>
                                 <div class="game-number">Profit <span class="number"><span
                                         class="fab fa-bitcoin"></span>&nbsp; <span
-                                        class="number-profit">{{gameInformation.profit}}</span></span></div>
+                                        class="number-profit">{{gameInformation.profit | eightDecimal}}</span></span></div>
                             </li>
                         </ul>
                         <div data-tip="Reset game stats" class="button_link button_link-small"
@@ -37,38 +37,38 @@
                     </div>
                 </div>
                 <div class="game-animation tutorial-step-greeting" id="game-animation">
-                    <div class="game-animation__low"></div>
+                    <div class="game-animation__low"><span v-if="bet.game_type==='high'">{{bet.game_number}} &lt;</span></div>
                     <div class="purse-container game-animation__number">
                         <div class="purse">
-                            <div class="coin">
+                            <div v-bind:class="{spin: playAnim, repeat: isRolling}" class="coin">
                                 <div class="front">
                                     <span class="label">{{numbers.n1}}</span>
                                 </div>
                             </div>
                         </div>
                         <div class="purse">
-                            <div class="coin">
+                            <div v-bind:class="{spin: playAnim, repeat: isRolling}" class="coin">
                                 <div class="front">
                                     <span class="label">{{numbers.n2}}</span>
                                 </div>
                             </div>
                         </div>
                         <div class="purse">
-                            <div class="coin">
+                            <div v-bind:class="{spin: playAnim, repeat: isRolling}" class="coin">
                                 <div class="front">
                                     <span class="label">{{numbers.n3}}</span>
                                 </div>
                             </div>
                         </div>
                         <div class="purse">
-                            <div class="coin">
+                            <div v-bind:class="{spin: playAnim, repeat: isRolling}" class="coin">
                                 <div class="front">
                                     <span class="label">{{numbers.n4}}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="game-animation__high">&lt; 5000</div>
+                    <div class="game-animation__high"><span v-if="bet.game_type==='low'">&lt; {{bet.game_number}}</span></div>
                 </div>
                 <div class="game-circle-section">
                     <div class="game-bets"></div>
@@ -120,7 +120,7 @@
                                         <div class="element-input__group">
                                             <input type="text" class="form-control"
                                                    name="chance-input" id="chance-input"
-                                                   placeholder="50.00"
+                                                   placeholder="45.00" disabled
                                                    v-model="bet.chance"
                                                    />
                                         </div>
@@ -138,7 +138,7 @@
                                         <div class="element-input__group">
                                             <input class="form-control"
                                                    name="payout-input" id="payout-input"
-                                                   placeholder="0.00000000"
+                                                   placeholder="0.00000000" disabled
                                                    v-model="bet.payout"
                                                    />
                                         </div>
@@ -161,6 +161,7 @@
                                                    type="text"
                                                    name="profit-amount-input"
                                                    class="form-control"
+                                                   disabled
                                                    v-model="bet.profit"
                                                    min="0.0000001"/>
                                         </div>
@@ -186,12 +187,6 @@
         })
     });
 
-    // $(document).on('click', '#game-submit-button', function(e){
-    //     e.preventDefault();
-    //     $('.purse').each(function(){
-    //         $(this).replaceWith($(this).clone());
-    //     });
-    // });
     export default {
         name: "Game",
         data() {
@@ -205,37 +200,64 @@
                     profit: 654321,
                 },
                 mute: false,
+                isRolling: false,
+                playAnim: false,
                 numbers:{ n1: 2, n2: 3, n3: 1, n4: 8, },
                 bet: {
                     bet_amount: '0.0000001',
-                    payout: '1.98',
-                    chance: '40',
-                    game_number: 1234,
+                    payout: '2.0',
+                    chance: '45.0',
+                    game_number: 4500,
                     game_type: 'low',
                     roll: 4532,
-                    profit: '0.00000009',
+                    profit: '0.0000002',
+                }
+            }
+        },
+        watch:{
+            'bet.bet_amount': function (val) {
+                this.bet.profit = (val * parseFloat(this.bet.payout)).toFixed(8);
+            },
+            'bet.chance': function (val) {
+                if(this.bet.game_type === 'low'){
+                    this.bet.game_number = val * 100;
+                }
+                else{
+                    this.bet.game_number = 10000 - val * 100;
+                }
+            },
+            'bet.game_type': function (val) {
+                if(val === 'low'){
+                    this.bet.game_number = this.bet.chance * 100;
+                }
+                else{
+                    this.bet.game_number = 10000 - this.bet.chance * 100;
                 }
             }
         },
         methods: {
             roll(e) {
                 e.preventDefault();
-                var coin = $('.coin');
-                coin.removeClass("spin");
-                coin.width();
-                coin.addClass("spin");
-                coin.addClass("repeat");
-                setTimeout(() => {
-                    this.numbers.n1 = 0;
-                    this.numbers.n2 = 0;
-                    this.numbers.n3 = 0;
-                    this.numbers.n4 = 0;
-                }, 300);
 
-                var n1 = Math.floor(Math.random() * 10);
-                var n2 = Math.floor(Math.random() * 10);
-                var n3 = Math.floor(Math.random() * 10);
-                var n4 = Math.floor(Math.random() * 10);
+                if(this.isRolling){
+                    return;
+                }
+                // coin.removeClass("spin");
+                // coin.width();
+                // coin.addClass("spin");
+                // coin.addClass("repeat");
+                this.playAnim = false;
+                this.isRolling = true;
+                setTimeout(() => {
+                    this.playAnim = true;
+                }, 10);
+
+                // setTimeout(() => {
+                //     this.numbers.n1 = "X";
+                //     this.numbers.n2 = "X";
+                //     this.numbers.n3 = "X";
+                //     this.numbers.n4 = "X";
+                // }, 500);
 
                 axios.post('api/bet/store', {
                     'api_token': window.api_token,
@@ -244,18 +266,12 @@
                     'chance': this.bet.chance,
                     'game_number': this.bet.game_number,
                     'game_type': this.bet.game_type,
-                    'roll': n1*1000 + n2*100 + n3*10 + n4,
+                    'roll': this.numbers.n1*1000 + this.numbers.n2*100 + this.numbers.n3*10 + this.numbers.n4,
                     'profit': this.bet.profit,
                 }).then(response => {
-                    this.bet.roll = response.data.data.roll;
-                    this.numbers.n1 = Math.floor(this.bet.roll / 1000);
-                    this.numbers.n2 = Math.floor((this.bet.roll % 1000)/ 100);
-                    this.numbers.n3 = Math.floor((this.bet.roll % 100)/ 10);
-                    this.numbers.n4 = this.bet.roll % 10;
-                    coin.removeClass("repeat");
+                    // this.updateResult(response.data.data, "Request");
                 });
 
-                this.gameInformation.wagered = Math.floor(Math.random() * 100000);
             },
             changeGameType(type, e){
                 this.bet.game_type = type;
@@ -270,7 +286,39 @@
                     high.addClass('on');
                 }
             },
+            getStatistics(){
+                axios.get('api/bet/statistics', {headers:{'Authorization': 'Bearer ' + window.api_token}}).then(response => {
+                    this.gameInformation = response.data.data;
+                    this.gameInformation.wagered = Math.abs(Math.round(parseFloat(this.gameInformation.wagered) * 100000000) / 100000000);
+                    this.gameInformation.profit = Math.round(parseFloat(this.gameInformation.profit) * 100000000) / 100000000;
+                });
+            },
+            updateResult(bet_data, fromWhere){
+                if(this.isRolling){
+                    this.bet.roll = bet_data.roll;
+                    this.numbers.n1 = Math.floor(this.bet.roll / 1000);
+                    this.numbers.n2 = Math.floor((this.bet.roll % 1000)/ 100);
+                    this.numbers.n3 = Math.floor((this.bet.roll % 100)/ 10);
+                    this.numbers.n4 = this.bet.roll % 10;
+                    this.isRolling = false;
+                    console.log(bet_data);
+                    this.getStatistics();
+                }
+                else{
+                    console.error("Update result failed!");
+                }
+            }
         },
+        created() {
+            this.getStatistics();
+            window.Echo.channel('bets-channel')
+                .listen('.BetCreated', (data) => {
+                    if(data.bet_data.user_id === window.userid){
+                        this.updateResult(data.bet_data, "Socket");
+                    }
+                });
+
+        }
     }
 </script>
 

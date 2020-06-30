@@ -27,6 +27,10 @@
     <script src="//{{ request()->getHost() }}:{{env('LARAVEL_ECHO_PORT')}}/socket.io/socket.io.js"></script>
     <script>
         window.laravel_echo_port='{{env("LARAVEL_ECHO_PORT")}}';
+        @auth
+            window.api_token = '{{\Illuminate\Support\Facades\Auth::user()->api_token}}';
+        @endauth
+
     </script>
 
 </head>
@@ -322,9 +326,6 @@
     <script src="{{ asset('theme/js/app.js') }}"></script>
     <script>
         $( document ).ready(function() {
-            @auth
-            window.api_token = '{{\Illuminate\Support\Facades\Auth::user()->api_token}}';
-            @endauth
             $("#change-password-form").submit(function(e){
                 $.ajax
                 ({
