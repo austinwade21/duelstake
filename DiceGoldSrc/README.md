@@ -16,7 +16,11 @@ DiceGold is a web application for dice game
     - rename '.env.example' to '.env' at DiceGold directory.
     - configure database host, port, database, username, password etc.
 - Migrate database <br>
-    `php artisan migrate`
+    `php artisan migrate` <br>
+    To migrate specific file <br>
+    `php artisan migrate --path=/database/migrations/2020_07_09_003948_create_messages_table.php` <br>
+    To rollback migration <br>
+    `php artisan migrate:rollback --step=1`
 - Build assets <br>
     `npm run public | npm run dev`
 - Install Redis Cache Server <br>

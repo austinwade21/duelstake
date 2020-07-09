@@ -4,6 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Bet
+ * @package App
+ */
 class Bet extends Model
 {
     protected $table = 'bets';

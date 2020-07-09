@@ -7,6 +7,18 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\SocialData;
 
+/**
+ * Class User
+ * @package App
+ * @property integer $id
+ * @property string $user_name
+ * @property string $email
+ * @property int $email_verified_at @description timestamp email verified
+ * @property boolean $hide_user_name
+ * @property array $bets
+ * @property array $messages
+ * @property array $social
+ */
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
@@ -44,5 +56,9 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function bets(){
         return $this->hasMany(Bet::class);
+    }
+
+    public function messages(){
+        return $this->hasMany(Message::class, 'receiver_id');
     }
 }

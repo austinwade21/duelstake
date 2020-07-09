@@ -94,3 +94,25 @@ Route::middleware('auth:api')->get('/bet/index', 'BetController@index');
 | Description:    Get Betting Statistics
 */
 Route::middleware('auth:api')->get('/bet/statistics', 'BetController@statistics');
+
+/*
+|-------------------------------------------------------------------------------
+| Get Public Messages
+|-------------------------------------------------------------------------------
+| URL:            /api/messages
+| Controller:     MessagesController@index
+| Method:         GET
+| Description:    Get Public Messages
+*/
+Route::middleware('auth:api')->get('/messages', 'MessagesController@index');
+
+/*
+|-------------------------------------------------------------------------------
+| Send a new message
+|-------------------------------------------------------------------------------
+| URL:            /api/messages/store
+| Controller:     MessagesController@store
+| Method:         GET
+| Description:    Get Public Messages
+*/
+Route::middleware('auth:api')->post('/messages/send', 'MessagesController@store');

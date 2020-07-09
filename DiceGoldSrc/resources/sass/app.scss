@@ -208,6 +208,21 @@ form{
   text-align: -webkit-center;
 }
 
+.flex-content{
+  height: 100%;
+}
+
+.chat{
+  position: fixed;
+  right: 6px;
+  top: 76px;
+}
+
+.chat-send-div{
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
 div#game {
   background: none;
   padding: 20px 0;

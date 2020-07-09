@@ -18,7 +18,7 @@ class BetController extends Controller
     {
         $allBets = Bet::orderBy('created_at', 'desc')
             ->take(10)
-            ->get();;
+            ->get();
         foreach ($allBets as &$bet) {
             $bet->username = $bet->user->user_name;
             $bet->bet_amount = sprintf("%.8f", $bet->bet_amount);
