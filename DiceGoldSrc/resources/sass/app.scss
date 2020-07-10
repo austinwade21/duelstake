@@ -215,12 +215,48 @@ form{
 .chat{
   position: fixed;
   right: 6px;
-  top: 76px;
+  top: 70px;
 }
 
 .chat-send-div{
   padding-left: 2px;
   padding-right: 2px;
+}
+
+.chatting-history{
+  height: calc(100vh - 140px);
+  overflow: auto;
+}
+
+.chatting-history::-webkit-scrollbar {
+  width: 0;
+  background: transparent; /* make scrollbar transparent */
+}
+
+#chat p{
+  white-space: normal;
+}
+
+.chat-switcher{
+  align-self: center;
+  font-size: 1.2rem;
+}
+
+.loading-indicator{
+  margin: auto;
+  width: 24px;
+}
+
+.loading-indicator img{
+  width: 24px;
+}
+
+.hidden{
+  display: none;
+}
+
+.margin-center{
+  margin: auto;
 }
 
 div#game {
@@ -846,6 +882,7 @@ canvas#game-area {
 body {
   background-color: #1d222e;
   position: absolute;
+  overflow: hidden auto;
   top: 0;
   bottom: 0;
   left: 0;

@@ -104,7 +104,7 @@ Route::middleware('auth:api')->get('/bet/statistics', 'BetController@statistics'
 | Method:         GET
 | Description:    Get Public Messages
 */
-Route::middleware('auth:api')->get('/messages', 'MessagesController@index');
+Route::middleware('auth:api')->get('/messages/{startId}', 'MessagesController@index');
 
 /*
 |-------------------------------------------------------------------------------

@@ -64,8 +64,11 @@
 
 
             </div>
-
             <div class="d-flex">
+                <div class="chat-switcher">
+                    <div class="d-block" href="#" id="chat-switcher"><i
+                                class="fas fa-comments align-middle mr-lg-1"></i></div>
+                </div>
 
                 <div class="dropdown d-inline-block user-dropdown">
                     <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
@@ -424,6 +427,17 @@
                 }
             });
 
+            $('#chat-switcher').click(function (e) {
+                var chatBox = $('#chat');
+                if(chatBox.is(":visible")){
+                    chatBox.hide();
+                    $('.game-area').addClass("margin-center");
+                }
+                else{
+                    chatBox.show();
+                    $('.game-area').removeClass("margin-center");
+                }
+            });
         });
     </script>
 </div>

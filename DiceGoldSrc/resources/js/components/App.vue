@@ -1,6 +1,6 @@
 <template>
-    <div class="d-lg-flex">
-        <div class="flex-column">
+    <div class="row">
+        <div class="game-area col-lg-8 col-md-12">
             <div class="container">
                 <game></game>
                 <div class="play-block-content">
@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex-column chat">
+        <div class="flex-column chat col-lg-4 col-md-12">
             <chat></chat>
         </div>
     </div>

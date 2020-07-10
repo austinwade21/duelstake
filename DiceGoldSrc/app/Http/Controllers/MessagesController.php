@@ -12,11 +12,17 @@ class MessagesController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param int $startId
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($startId = -1)
     {
-        $publicMessages = Message::where('is_public', true)->orderBy('created_at', 'desc')->get();
+        if($startId > -1){
+            $publicMessages = Message::where('is_public', true)->where('id', '<', $startId)->orderBy('created_at', 'desc')->take(20)->get();
+        }
+        else{
+            $publicMessages = Message::where('is_public', true)->orderBy('created_at', 'desc')->take(20)->get();
+        }
         return response()->json([
             'status' => true,
             'data' => $publicMessages,
