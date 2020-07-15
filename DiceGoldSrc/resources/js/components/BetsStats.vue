@@ -136,7 +136,7 @@
 
 <script>
     import Bet from "./Bet";
-
+    import {EventBus} from '../app.js';
 
     export default {
         name: "BetsStats",
@@ -237,12 +237,11 @@
         created() {
             window.Echo.channel('bets-channel')
                 .listen('.BetCreated', (data) => {
-                    this.allBets.unshift(data.bet_data);
                     if(data.bet_data.user_id === window.userid){
-                        this.myBets.unshift(data.bet_data);
+                        return;
                     }
+                    this.allBets.unshift(data.bet_data);
                     this.allBets.length = Math.min(this.allBets.length, 10);
-                    this.myBets.length = Math.min(this.myBets.length, 10);
                 });
 
             axios.get('api/bet/index', {headers:{'Authorization': 'Bearer ' + window.api_token}}).then(response => {
@@ -251,6 +250,13 @@
                 window.userid = response.data.data.userid;
             });
 
+            self = this;
+            EventBus.$on('animation-finished', function (bet) {
+                self.myBets.unshift(bet);
+                self.allBets.unshift(bet);
+                self.allBets.length = Math.min(self.allBets.length, 10);
+                self.myBets.length = Math.min(self.myBets.length, 10);
+            })
         }
     }
 </script>

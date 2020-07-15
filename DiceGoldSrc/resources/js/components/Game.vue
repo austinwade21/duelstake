@@ -71,19 +71,23 @@
                     <div class="game-animation__high"><span v-if="bet.game_type==='low'">&lt; {{bet.game_number}}</span></div>
                 </div>
                 <div class="game-circle-section">
-                    <div class="game-bets"></div>
+                    <div class="game-bets">
+                        <div class="game-bets__bet" v-bind:class="{bet_win: bet.won, bet_loss: !bet.won}" v-for="bet in bet_history">
+                            {{bet.roll}}
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="game-controls" tabindex="1">
                 <form class="controls-form" novalidate="">
                     <div class="controls-form__buttons">
-                        <div class="switch-game-btn tutorial-step-threshold on" id="game-type-low" @click="changeGameType('low')">Low</div>
+                        <div class="switch-game-btn tutorial-step-threshold" v-bind:class="{on:bet.game_type==='low'}" id="game-type-low" @click="changeGameType('low')">Low</div>
                         <div class="game-buttons-wrapper">
                             <button type="submit" id="game-submit-button" @click="roll"
                                     class="tutorial-step-game-main-button game-main-button">ROLL
                             </button>
                         </div>
-                        <div class="switch-game-btn" id="game-type-high" @click="changeGameType('high')">High</div>
+                        <div class="switch-game-btn" v-bind:class="{on:bet.game_type==='high'}"  id="game-type-high" @click="changeGameType('high')">High</div>
                     </div>
                     <div class="controls-form__row row">
                         <div class="grid grid_sm2">
@@ -177,6 +181,7 @@
 </template>
 
 <script>
+    import { EventBus } from '../app.js';
     $(document).ready(function () {
         $('.purse').each(function () {
 
@@ -202,6 +207,7 @@
                 mute: false,
                 isRolling: false,
                 playAnim: false,
+                isEmitted: true,
                 numbers:{ n1: 2, n2: 3, n3: 1, n4: 8, },
                 bet: {
                     bet_amount: '0.0000001',
@@ -211,7 +217,10 @@
                     game_type: 'low',
                     roll: 4532,
                     profit: '0.0000002',
-                }
+                    won: false,
+                },
+                bet_result: null,
+                bet_history: [],
             }
         },
         watch:{
@@ -239,9 +248,22 @@
             roll(e) {
                 e.preventDefault();
 
-                if(this.isRolling){
+                if(this.isRolling || this.isEmitted){
                     return;
                 }
+                var animationElem = this.$el.querySelector(".coin");
+                this.isEmitted = false;
+                animationElem.addEventListener("animationend", (evt => {
+                    if(this.isRolling || this.isEmitted){
+                        return;
+                    }
+                    this.isEmitted = true;
+                    EventBus.$emit('animation-finished', this.bet_result);
+                    this.bet_history.push(this.bet_result);
+                    if(this.bet_history.length > 10){
+                        this.bet_history = this.bet_history.slice(this.bet_history.length - 10);
+                    }
+                }));
                 // coin.removeClass("spin");
                 // coin.width();
                 // coin.addClass("spin");
@@ -269,22 +291,12 @@
                     'roll': this.numbers.n1*1000 + this.numbers.n2*100 + this.numbers.n3*10 + this.numbers.n4,
                     'profit': this.bet.profit,
                 }).then(response => {
-                    // this.updateResult(response.data.data, "Request");
+                    this.updateResult(response.data.data, "Request");
                 });
 
             },
             changeGameType(type, e){
                 this.bet.game_type = type;
-                var low = $('#game-type-low');
-                var high = $('#game-type-high');
-                if(type === 'low'){
-                    low.addClass('on');
-                    high.removeClass('on');
-                }
-                else{
-                    low.removeClass('on');
-                    high.addClass('on');
-                }
             },
             getStatistics(){
                 axios.get('api/bet/statistics', {headers:{'Authorization': 'Bearer ' + window.api_token}}).then(response => {
@@ -296,12 +308,14 @@
             updateResult(bet_data, fromWhere){
                 if(this.isRolling){
                     this.bet.roll = bet_data.roll;
+                    this.bet.won = bet_data.won;
                     this.numbers.n1 = Math.floor(this.bet.roll / 1000);
                     this.numbers.n2 = Math.floor((this.bet.roll % 1000)/ 100);
                     this.numbers.n3 = Math.floor((this.bet.roll % 100)/ 10);
                     this.numbers.n4 = this.bet.roll % 10;
                     this.isRolling = false;
-                    console.log(bet_data);
+                    this.bet_result = bet_data;
+                    // console.log(bet_data);
                     this.getStatistics();
                 }
                 else{
@@ -311,13 +325,6 @@
         },
         created() {
             this.getStatistics();
-            window.Echo.channel('bets-channel')
-                .listen('.BetCreated', (data) => {
-                    if(data.bet_data.user_id === window.userid){
-                        this.updateResult(data.bet_data, "Socket");
-                    }
-                });
-
         }
     }
 </script>

@@ -71,17 +71,21 @@ class BetController extends Controller
         if($bet->game_type == 'low'){
             if($bet->roll < $bet->game_number){
                 $bet->profit = $bet->bet_amount * $bet->payout;
+                $bet->won = true;
             }
             else{
-                $bet->profit = - $bet->bet_amount * $bet->payout;
+                $bet->profit = - $bet->bet_amount;
+                $bet->won = false;
             }
         }
         else{
             if($bet->roll >= $bet->game_number){
                 $bet->profit = $bet->bet_amount * $bet->payout;
+                $bet->won = true;
             }
             else{
-                $bet->profit = - $bet->bet_amount * $bet->payout;
+                $bet->profit = - $bet->bet_amount;
+                $bet->won = false;
             }
         }
 
@@ -90,10 +94,10 @@ class BetController extends Controller
         $bet->bet_amount = sprintf("%.8f", $bet->bet_amount);
         $bet->profit = sprintf("%.8f", $bet->profit);
         $bet->created_at_str = date("H:i:s", strtotime($bet->created_at));
+        $bet->username = auth()->user()->user_name;
 
         $betEvent = new BetCreated();
         $betEvent->data = $bet;
-        $betEvent->data->username = auth()->user()->user_name;
         event($betEvent);
 
         return response()->json([
@@ -155,7 +159,7 @@ class BetController extends Controller
             'bets' => Bet::where('user_id', auth()->id())->count(),
             'wins' => Bet::where('user_id', auth()->id())->where('profit', '>', 0)->count(),
             'wagered' => Bet::where('user_id', auth()->id())->where('profit', '<', 0)->sum('profit'),
-            'profit' => Bet::where('user_id', auth()->id())->where('profit', '>', 0)->sum('profit'),
+            'profit' => Bet::where('user_id', auth()->id())->sum('profit'),
         ];
 
         $statistics['losses'] = $statistics['bets'] - $statistics['wins'];

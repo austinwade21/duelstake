@@ -43,6 +43,7 @@ Vue.filter("toLocalTimeString", function (value) {
     return d.toLocaleTimeString();
 });
 
+export const EventBus = new Vue();
 
 const app = new Vue({
     el: '#app',

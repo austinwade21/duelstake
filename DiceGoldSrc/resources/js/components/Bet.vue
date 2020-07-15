@@ -12,7 +12,7 @@
         <td v-if="!hidden.includes('betAmount')" class=""><span class="bet amount-icon"><span
                 class="fab fa-bitcoin"></span> <strong
                 class="bonus-decor">{{betAmount}}</strong></span></td>
-        <td v-if="!hidden.includes('payout')" class="cell-hidden cell-hidden_2">{{payout | oneDecimal}} x</td>
+        <td v-if="!hidden.includes('payout')" class="cell-hidden cell-hidden_2">{{payout | oneDecimal}}x</td>
         <td v-if="!hidden.includes('chance')" class="cell-hidden cell-hidden_2">{{chance | oneDecimal}}%</td>
         <td v-if="!hidden.includes('gameNumber')" class="cell-hidden cell-hidden_1">
             <span v-if="gameType==='low'"> < </span><span v-else> > </span>{{gameNumber}}</td>

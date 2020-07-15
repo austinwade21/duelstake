@@ -7,6 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Bet
  * @package App
+ *
+ * @property int $roll
+ * @property float $bet_amount
+ * @property float $payout
+ * @property int $user_id
+ * @property float $chance
+ * @property int $game_number
+ * @property string $game_type low/high
+ * @property float $profit
+ * @property boolean $won
+ * @property string $username This is not db field
+ * @property string $created_at_str This is not db field
  */
 class Bet extends Model
 {
