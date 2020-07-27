@@ -18,6 +18,7 @@ use App\SocialData;
  * @property array $bets
  * @property array $messages
  * @property array $social
+ * @property string $avatar
  */
 class User extends Authenticatable implements MustVerifyEmail
 {

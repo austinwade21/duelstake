@@ -250,12 +250,12 @@
                 window.userid = response.data.data.userid;
             });
 
-            self = this;
+            const self1 = this;
             EventBus.$on('animation-finished', function (bet) {
-                self.myBets.unshift(bet);
-                self.allBets.unshift(bet);
-                self.allBets.length = Math.min(self.allBets.length, 10);
-                self.myBets.length = Math.min(self.myBets.length, 10);
+                self1.myBets.unshift(bet);
+                self1.allBets.unshift(bet);
+                self1.allBets.length = Math.min(self1.allBets.length, 10);
+                self1.myBets.length = Math.min(self1.myBets.length, 10);
             })
         }
     }

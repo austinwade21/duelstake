@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Events\MessageSent;
 use App\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Mockery\Exception;
 
 class MessagesController extends Controller
@@ -22,6 +23,13 @@ class MessagesController extends Controller
         }
         else{
             $publicMessages = Message::where('is_public', true)->orderBy('created_at', 'desc')->take(20)->get();
+        }
+
+        foreach ($publicMessages as $message){
+            $message->status = Cache::has('user-is-online-' . $message->user_id);
+            if($message->sender->hide_user_name){
+                $message->status = false;
+            }
         }
         return response()->json([
             'status' => true,
@@ -48,6 +56,12 @@ class MessagesController extends Controller
         try{
             $saved = $message->save();
             $message->load(['sender', 'receiver']);
+
+            $message->status = Cache::has('user-is-online-' . $message->user_id);
+            if($message->sender->hide_user_name){
+                $message->status = false;
+            }
+
             broadcast(new MessageSent($message));
 
             return response()->json([

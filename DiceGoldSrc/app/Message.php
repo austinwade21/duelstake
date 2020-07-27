@@ -56,11 +56,11 @@ class Message extends Model
 
     public function sender()
     {
-        return $this->belongsTo(User::class, 'user_id')->select(['id', 'user_name']);
+        return $this->belongsTo(User::class, 'user_id')->select(['id', 'user_name', 'avatar', 'hide_user_name']);
     }
 
     public function receiver()
     {
-        return $this->belongsTo(User::class, 'receiver_id')->select(['id', 'user_name']);
+        return $this->belongsTo(User::class, 'receiver_id')->select(['id', 'user_name', 'avatar', 'hide_user_name']);
     }
 }

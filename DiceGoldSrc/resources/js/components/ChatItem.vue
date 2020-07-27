@@ -2,7 +2,7 @@
     <li>
         <a href="#">
             <div class="media">
-                <div :class="status" class="user-img align-self-center mr-3">
+                <div :class="{online: status}" class="user-img align-self-center mr-3">
                     <img v-if="avatar" :src="avatar" class="rounded-circle avatar-xs" alt="">
                     <div v-else class="avatar-xs align-self-center">
                         <span class="avatar-title rounded-circle bg-light text-body">{{firstCharacter}}</span>

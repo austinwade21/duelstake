@@ -112,7 +112,18 @@ Route::middleware('auth:api')->get('/messages/{startId}', 'MessagesController@in
 |-------------------------------------------------------------------------------
 | URL:            /api/messages/store
 | Controller:     MessagesController@store
-| Method:         GET
-| Description:    Get Public Messages
+| Method:         POST
+| Description:    Send a new message
 */
 Route::middleware('auth:api')->post('/messages/send', 'MessagesController@store');
+
+/*
+|-------------------------------------------------------------------------------
+| Save profile image
+|-------------------------------------------------------------------------------
+| URL:            /api/user/avatar/save
+| Controller:     MessagesController@store
+| Method:         POST
+| Description:    Save profile image
+*/
+Route::middleware('auth:api')->post('/user/avatar/save', 'UsersController@saveAvatar');

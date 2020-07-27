@@ -207,4 +207,42 @@ class UsersController extends Controller
 
         return redirect(route('home'));
     }
+
+    /**
+     * URL:            /api/user/avatar/save
+     * Method:         post
+     * Description:    redirect to discord provider service
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function saveAvatar(Request $request){
+        $user = Auth::user();
+        $data = $request->input('avatar');
+        $result = [
+            'message' => "Avatar saved successfully.",
+            'state' => 'success',
+            'data' => ['request' => $request->all()],
+        ];
+        if (preg_match('/data:image\/(gif|jpeg|png);base64,(.*)/i', $data, $matches)) {
+            $imageType = $matches[1];
+            $imageData = base64_decode($matches[2]);
+            $image = imagecreatefromstring($imageData);
+            $filename = '/avatars/' . \auth()->id() . '_' . md5($imageData) . '.png';
+
+            if (imagepng($image, public_path() . '/' . $filename)) {
+                $user->avatar = $filename;
+                $user->save();
+                $result['data'] = ['avatar_url'=>$filename];
+                return response()->json($result);
+            } else {
+                $result['message'] = 'Could not save the file.';
+                $result['state'] = 'failed';
+                return response()->json($result);
+            }
+        } else {
+            $result['message'] = 'Invalid data URL.';
+            $result['state'] = 'failed';
+            return response()->json($result);
+        }
+    }
 }

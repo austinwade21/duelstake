@@ -2,8 +2,13 @@
     <div class="chat-leftsidebar" id="chat">
         <div class="chatting-history">
             <ul class="list-unstyled chat-list">
+                <div class="chat-messages__scroll" v-if="canNavigate">
+                    <div class="chat-messages__scroll-button" @click="scrollDownChattingHistory">
+                        <i class="fas fa-angle-down"></i>&nbsp; New messages below
+                    </div>
+                </div>
                 <infinite-loading direction="top" @infinite="loadMessages">
-                    <div slot="no-more">No more message</div>
+                    <div slot="no-more"></div>
                 </infinite-loading>
                 <ChatItem v-for="message in publicMessages"
                           v-bind:key="message.id"
@@ -11,7 +16,7 @@
                           :time="message.created_at"
                           :username="message.sender.user_name"
                           :message="message.message"
-                          :avatar="message.avatar"
+                          :avatar="message.sender.avatar"
                           :status="message.status"
                           ></ChatItem>
             </ul>
@@ -20,8 +25,7 @@
             <div class="row">
                 <div class="col">
                     <div class="position-relative">
-                        <input v-model="newMessage" v-on:keyup.enter="sendMessage" type="text" class="form-control chat-input" placeholder="Enter Message...">
-
+                        <TextareaEmojiPicker v-model="newMessage" v-on:key-enter="sendMessage" class="form-control chat-input" placeholder="Enter Message..."></TextareaEmojiPicker>
                     </div>
                 </div>
                 <div class="col-auto chat-send-div">
@@ -36,9 +40,10 @@
 <script>
     import InfiniteLoading from 'vue-infinite-loading';
     import ChatItem from "./ChatItem";
+    import TextareaEmojiPicker from "./TextareaEmojiPicker";
     export default {
         name: "Chat",
-        components: {ChatItem, InfiniteLoading},
+        components: {TextareaEmojiPicker, ChatItem, InfiniteLoading},
         data() {
             return {
                 publicMessages:[
@@ -56,6 +61,8 @@
                 ],
                 newMessage: null,
                 lastId: -1,
+                canNavigate: false,
+                isBottom: true,
             }
         },
         watch:{
@@ -79,6 +86,8 @@
             scrollDownChattingHistory(){
                 var container = this.$el.querySelector(".chatting-history");
                 container.scrollTop = container.scrollHeight;
+                this.canNavigate = false;
+                this.isBottom = true;
             },
             loadMessages($state){
                 var url = 'api/messages/' + this.lastId;
@@ -93,30 +102,33 @@
                     }
                 });
             },
-            // scrollListener(e){
-            //     if(this.loadedAll || this.isLoading) return;
-            //     var container = this.$el.querySelector(".chatting-history");
-            //     if(container.scrollTop < 1 && !this.loadedAll && !this.isLoading){
-            //         this.loadMessages();
-            //     }
-            //     this.isBottom = container.scrollTop >= container.scrollHeight;
-            // }
+            scrollListener(e){
+                const container = this.$el.querySelector(".chatting-history");
+                const self2 = this;
+                setTimeout(function () {
+                    self2.isBottom = container.scrollTop + container.clientHeight >= container.scrollHeight - 50;
+                    self2.canNavigate = !self2.isBottom;
+                }, 100);
+            }
         },
         created() {
             window.Echo.channel('public-message')
                 .listen('.MessageSent', (data) => {
                     this.publicMessages.push(data.message);
                     self = this;
-                    setTimeout(function () {
-                        self.scrollDownChattingHistory();
-                    }, 200);
+                    if(this.isBottom){
+                        setTimeout(function () {
+                            self.scrollDownChattingHistory();
+                        }, 200);
+                    }
+                    this.canNavigate = !this.isBottom;
                 });
 
             // this.loadMessages(); // because InfiniteLoading trigger initial loading, it is no need to call it manually.
         },
         mounted(){
-            // var container = this.$el.querySelector(".chatting-history");
-            // container.addEventListener('scroll', this.scrollListener);
+            var container = this.$el.querySelector(".chatting-history");
+            container.addEventListener('scroll', this.scrollListener);
         },
         updated() {
         }

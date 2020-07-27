@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <div class="game-area col-lg-8 col-md-12">
+        <div class="game-area col-lg-9 col-md-12">
             <div class="container">
                 <game></game>
                 <div class="play-block-content">
@@ -43,9 +43,11 @@
                 </div>
             </div>
         </div>
-        <div class="flex-column chat col-lg-4 col-md-12">
+        <div class="flex-column chat col-lg-3 col-md-12">
             <chat></chat>
         </div>
+
+        <my-info></my-info>
     </div>
 </template>
 
@@ -57,13 +59,32 @@
     import Game from "./Game";
     import BetsStats from "./BetsStats";
     import Chat from "./Chat";
+    import MyInfo from "./MyInfo";
 
     export default {
         components: {
+            MyInfo,
             Chat,
             Game,
             BetsStats
         },
+        data: function data() {
+            return {
+                rotation: 0,
+                scale: 1,
+                borderRadius: 0
+            };
+        },
 
+        methods: {
+            saveClicked: function saveClicked() {
+                var img = this.$refs.vueavatar.getImageScaled();
+                this.$refs.image.src = img.toDataURL();
+            },
+            onImageReady: function onImageReady() {
+                this.scale = 1;
+                this.rotation = 0;
+            }
+        }
     }
 </script>

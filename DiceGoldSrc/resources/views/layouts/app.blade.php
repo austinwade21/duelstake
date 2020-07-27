@@ -73,9 +73,21 @@
                 <div class="dropdown d-inline-block user-dropdown">
                     <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="rounded-circle header-profile-user"
-                             src="{{asset('theme/images/users/avatar-2.jpg')}}"
-                             alt="Header Avatar">
+                        @guest
+                            <img class="rounded-circle header-profile-user"
+                                 src="{{asset('theme/images/users/avatar-2.jpg')}}"
+                                 alt="Header Avatar">
+                        @else
+                            @if(\Illuminate\Support\Facades\Auth::user()->avatar)
+                                <img class="rounded-circle header-profile-user"
+                                     src="{{\Illuminate\Support\Facades\Auth::user()->avatar}}"
+                                     alt="Header Avatar">
+                            @else
+                                <img class="rounded-circle header-profile-user"
+                                     src="{{asset('theme/images/users/avatar-2.jpg')}}"
+                                     alt="Header Avatar">
+                            @endif
+                        @endguest
                         <span class="d-none d-xl-inline-block ml-1">
                             @guest
                                 {{ __('Guest') }}
@@ -94,13 +106,13 @@
                                 <a class="dropdown-item" href="{{ route('register') }}">{{ __('Register') }}</a>
                             @endif
                         @else
-                            <a class="dropdown-item" href="#"><i class="ri-user-line align-middle mr-1"></i> My Info</a>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myInfoDialog"><i class="fas fa-user align-middle mr-1"></i> My Info</a>
                             <a class="dropdown-item d-block" href="#" data-toggle="modal" data-target="#settingsDialog"><i
-                                        class="ri-settings-2-line align-middle mr-1"></i> Settings</a>
+                                        class="fa fa-cog align-middle mr-1"></i> Settings</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();"><i
-                                        class="ri-shut-down-line align-middle mr-1 text-danger"></i> {{ __('Logout') }}
+                                        class="fas fa-power-off align-middle mr-1 text-danger"></i> {{ __('Logout') }}
                             </a>
 
                             <div class="dropdown-item" aria-labelledby="navbarDropdown">

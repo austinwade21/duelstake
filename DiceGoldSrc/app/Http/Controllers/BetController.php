@@ -74,6 +74,7 @@ class BetController extends Controller
                 $bet->won = true;
             }
             else{
+                $bet->payout = 0;
                 $bet->profit = - $bet->bet_amount;
                 $bet->won = false;
             }
@@ -84,6 +85,7 @@ class BetController extends Controller
                 $bet->won = true;
             }
             else{
+                $bet->payout = 0;
                 $bet->profit = - $bet->bet_amount;
                 $bet->won = false;
             }
