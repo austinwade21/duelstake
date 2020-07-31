@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Events\MessageSent;
 use App\Message;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Mockery\Exception;
 
@@ -57,7 +59,10 @@ class MessagesController extends Controller
             $saved = $message->save();
             $message->load(['sender', 'receiver']);
 
-            $message->status = Cache::has('user-is-online-' . $message->user_id);
+
+            $expiresAt = Carbon::now()->addMinutes(5);
+            Cache::put('user-is-online-' . Auth::user()->id, true, $expiresAt);
+            $message->status = true;
             if($message->sender->hide_user_name){
                 $message->status = false;
             }

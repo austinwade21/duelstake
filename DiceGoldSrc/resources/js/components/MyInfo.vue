@@ -12,13 +12,10 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="">
-
-                    </div>
                     <div class="row">
                         <div class="col-lg-6" style="text-align-last: right;">
                             <vue-avatar
-                                    :image="'/theme/images/users/avatar-2.jpg'"
+                                    :image="userProfile.avatar"
                                     :width=200
                                     :height=200
                                     :rotation=parseFloat(rotation)
@@ -100,17 +97,26 @@
                     type: Number,
                     default: 0
                 },
+                mute: false,
+                userProfile: {},
             };
         },
-
+        watch: {
+            mute(val) {
+                document.getElementById('info-mute').className = val ? "on" : "";
+            }
+        },
         methods: {
             saveClicked: function saveClicked() {
+                this.mute = true;
                 const img = this.$refs.vueavatar.getImageScaled();
                 axios.post('api/user/avatar/save', {
                     'api_token': window.api_token,
                     'avatar': img.toDataURL("image/png"),
                 }).then(response => {
                     console.log(response);
+                    this.mute = false;
+                    document.getElementById('profile-image').src = response.data.data.avatar_url;
                 });
 
             },
@@ -118,6 +124,14 @@
                 this.scale = 1;
                 this.rotation = 0;
             }
+        },
+        created() {
+            axios.get('/api/user', {headers:{'Authorization': 'Bearer ' + window.api_token}}).then(response => {
+                if(response.data){
+                    this.userProfile = response.data;
+                }
+            });
+
         }
     }
 </script>

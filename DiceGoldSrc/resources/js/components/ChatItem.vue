@@ -3,6 +3,9 @@
         <a href="#">
             <div class="media">
                 <div :class="{online: status}" class="user-img align-self-center mr-3">
+                    <div class="rank-badge">
+                        <img class="rank-badge-img" src="/images/diamond.png">
+                    </div>
                     <img v-if="avatar" :src="avatar" class="rounded-circle avatar-xs" alt="">
                     <div v-else class="avatar-xs align-self-center">
                         <span class="avatar-title rounded-circle bg-light text-body">{{firstCharacter}}</span>

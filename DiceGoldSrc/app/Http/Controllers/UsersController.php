@@ -230,9 +230,23 @@ class UsersController extends Controller
             $filename = '/avatars/' . \auth()->id() . '_' . md5($imageData) . '.png';
 
             if (imagepng($image, public_path() . '/' . $filename)) {
+                $oldAvatar = public_path() . $user->avatar;
+                if($oldAvatar == $filename){
+                    $result['message'] = 'Same image uploaded.';
+                    $result['data'] = ['avatar_url'=>$filename, 'old_avatar'=>$oldAvatar, 'delete_result' => false];
+                    return response()->json($result);
+                }
+                    // delete old avatar.
+                if(file_exists($oldAvatar))
+                {
+                    $deleteResult = unlink($oldAvatar);
+                }
+                else{
+                    $deleteResult = true;
+                }
                 $user->avatar = $filename;
                 $user->save();
-                $result['data'] = ['avatar_url'=>$filename];
+                $result['data'] = ['avatar_url'=>$filename, 'old_avatar'=>$oldAvatar, 'delete_result' => $deleteResult];
                 return response()->json($result);
             } else {
                 $result['message'] = 'Could not save the file.';
@@ -244,5 +258,17 @@ class UsersController extends Controller
             $result['state'] = 'failed';
             return response()->json($result);
         }
+    }
+
+    public function timeout(Request $request, string $username, int $seconds){
+        if(Auth::user()->can('timeout users')){
+            $request->session()->flash('message.level', 'success');
+            $request->session()->flash('message.content', "User {$username} has been timeout for {$seconds}!");
+        }
+        else{
+            $request->session()->flash('message.level', 'danger');
+            $request->session()->flash('message.content', 'Permission denied!\n');
+        }
+        return redirect(route('home'));
     }
 }

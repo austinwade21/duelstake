@@ -23,3 +23,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware('auth')->get('/user/social', 'UsersController@social');
 
 Route::middleware('auth')->get('/user/discord/callback', 'UsersController@discordCallback');
+
+Route::middleware('auth')->get('/user/timeout/{username}/{seconds}', 'UsersController@timeout');

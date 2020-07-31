@@ -343,6 +343,16 @@ form{
   background: transparent; /* make scrollbar transparent */
 }
 
+.rank-badge{
+  position: absolute;
+  right: -10px;
+  top: -8px;
+}
+
+.rank-badge-img{
+  width: 16px;
+}
+
 #chat p{
   white-space: normal;
 }
@@ -379,6 +389,18 @@ form{
 
 .loading-indicator img{
   width: 24px;
+}
+
+#info-mute {
+  position: absolute;
+}
+#info-mute.on {
+  opacity: 0.3;
+  z-index: 2000;
+  background: white;
+  height: 100%;
+  width: 100%;
+  top: 0;
 }
 
 .hidden{

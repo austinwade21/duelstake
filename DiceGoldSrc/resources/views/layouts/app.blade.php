@@ -74,16 +74,16 @@
                     <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         @guest
-                            <img class="rounded-circle header-profile-user"
+                            <img id="profile-image" class="rounded-circle header-profile-user"
                                  src="{{asset('theme/images/users/avatar-2.jpg')}}"
                                  alt="Header Avatar">
                         @else
                             @if(\Illuminate\Support\Facades\Auth::user()->avatar)
-                                <img class="rounded-circle header-profile-user"
+                                <img id="profile-image" class="rounded-circle header-profile-user"
                                      src="{{\Illuminate\Support\Facades\Auth::user()->avatar}}"
                                      alt="Header Avatar">
                             @else
-                                <img class="rounded-circle header-profile-user"
+                                <img id="profile-image" class="rounded-circle header-profile-user"
                                      src="{{asset('theme/images/users/avatar-2.jpg')}}"
                                      alt="Header Avatar">
                             @endif
@@ -453,5 +453,7 @@
         });
     </script>
 </div>
+<div id="info-mute"></div>
+
 </body>
 </html>
