@@ -30,7 +30,7 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'user_name', 'email', 'password', 'email_verified_at', 'hide_user_name'
+        'user_name', 'email', 'password', 'email_verified_at', 'hide_user_name', 'avatar', 'banned_until',
     ];
 
     /**
@@ -49,6 +49,7 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'banned_until' => 'datetime',
     ];
 
     public function social(){

@@ -263,8 +263,16 @@ class UsersController extends VoyagerUserController
 
     public function timeout(Request $request, string $username, int $seconds){
         if(Auth::user()->hasPermission('timeout_user')){
+            $user = User::where('user_name',$username) -> first();
+            if(empty($user)){
+                $request->session()->flash('message.level', 'danger');
+                $request->session()->flash('message.content', "Cannot find user with {$username}!\n");
+                return redirect(route('home'));
+            }
+            $user->banned_until = now()->addSeconds($seconds);
+            $user->save();
             $request->session()->flash('message.level', 'success');
-            $request->session()->flash('message.content', "User {$username} has been timeout for {$seconds}!");
+            $request->session()->flash('message.content', "User {$username} has been timeout for {$seconds} seconds!");
         }
         else{
             $request->session()->flash('message.level', 'danger');
@@ -272,4 +280,45 @@ class UsersController extends VoyagerUserController
         }
         return redirect(route('home'));
     }
+
+    public function ban(Request $request, string $username){
+        if(Auth::user()->hasPermission('ban_user')){
+            $user = User::where('user_name',$username) -> first();
+            if(empty($user)){
+                $request->session()->flash('message.level', 'danger');
+                $request->session()->flash('message.content', "Cannot find user with {$username}!\n");
+                return redirect(route('home'));
+            }
+            $user->banned_until = '2038-01-01 00:00:00';
+            $user->save();
+            $request->session()->flash('message.level', 'success');
+            $request->session()->flash('message.content', "User {$username} has been banned successfully!");
+        }
+        else{
+            $request->session()->flash('message.level', 'danger');
+            $request->session()->flash('message.content', 'Permission denied!\n');
+        }
+        return redirect(route('home'));
+    }
+
+    public function unban(Request $request, string $username){
+        if(Auth::user()->hasPermission('ban_user')){
+            $user = User::where('user_name',$username) -> first();
+            if(empty($user)){
+                $request->session()->flash('message.level', 'danger');
+                $request->session()->flash('message.content', "Cannot find user with {$username}!\n");
+                return redirect(route('home'));
+            }
+            $user->banned_until = null;
+            $user->save();
+            $request->session()->flash('message.level', 'success');
+            $request->session()->flash('message.content', "User {$username} has been unbanned successfully!");
+        }
+        else{
+            $request->session()->flash('message.level', 'danger');
+            $request->session()->flash('message.content', 'Permission denied!\n');
+        }
+        return redirect(route('home'));
+    }
+
 }

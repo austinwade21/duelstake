@@ -31,6 +31,9 @@ body[data-topbar=dark] #page-topbar{
 .alert{
   margin-top: 75px;
 }
+.card-body .alert{
+  margin-top: 0;
+}
 
 .navbar-header a.button{
   color: #e9ecef;

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a922c752-ec18-452c-933e-8ad08e91900c" name="Default Changelist" comment="">
+    <list default="true" id="a922c752-ec18-452c-933e-8ad08e91900c" name="Default Changelist" comment="added some missing files">
+      <change afterPath="$PROJECT_DIR$/DiceGoldSrc/app/Http/Middleware/CheckBanned.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_08_10_165332_add_ban_field.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/MessagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/MessagesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/UsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/app/Http/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DiceGoldSrc/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_07_27_174451_added_avatar_field.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/MyInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/MyInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/views/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DiceGoldSrc/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/UsersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5334">
-              <caret line="266" column="48" selection-start-line="266" selection-start-column="48" selection-end-line="266" selection-end-column="48" />
+            <state relative-caret-position="374">
+              <caret line="274" column="115" selection-start-line="274" selection-start-column="115" selection-end-line="274" selection-end-column="115" />
               <folding>
                 <element signature="e#42#73#0#PHP" expanded="true" />
               </folding>
@@ -36,33 +37,88 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/views/layouts/app.blade.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="74" column="63" selection-start-line="74" selection-start-column="63" selection-end-line="74" selection-end-column="63" />
+            <state relative-caret-position="374">
+              <caret line="28" column="83" selection-start-line="28" selection-start-column="83" selection-end-line="28" selection-end-column="83" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/lang/en/pagination.php">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/views/layouts/app.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="82" column="83" selection-start-line="82" selection-start-column="71" selection-end-line="82" selection-end-column="83" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/lang/en/auth.php">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/views/auth/login.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/lang/en/passwords.php">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/sass/app.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="34" column="15" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/lang/en/validation.php">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Kernel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="46" column="52" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Middleware/VerifyCsrfToken.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Middleware/CheckBanned.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_08_10_165332_add_ban_field.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="521">
+              <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+              <folding>
+                <element signature="e#23#69#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -126,9 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/views/home.blade.php" />
-        <option value="$PROJECT_DIR$/public_html/theme/css/app-dark.css" />
-        <option value="$PROJECT_DIR$/public_html/theme/css/app-dark.min.css" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_06_15_125145_create_bets_table.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/vendor/laravel/framework/src/Illuminate/Http/Request.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/laravel-echo-setup.js" />
@@ -147,7 +200,6 @@
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Game.vue" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/app/Bet.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/BetController.php" />
-        <option value="$PROJECT_DIR$/DiceGoldSrc/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/app/Http/Middleware/LastUserActivity.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/TextareaEmojiPicker.vue" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/node_modules/vue-avatar-editor/src/components/VueAvatar.vue" />
@@ -157,15 +209,11 @@
         <option value="$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_07_27_174451_added_avatar_field.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/app/Message.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Chat.vue" />
-        <option value="$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/MessagesController.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/App.vue" />
-        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/ChatItem.vue" />
-        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/sass/app.scss" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_07_30_032110_create_role_permission_table.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_07_30_032130_create_permissions_table.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_07_30_031750_create_roles_table.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/database/seeds/PermissionsSeeder.php" />
-        <option value="$PROJECT_DIR$/DiceGoldSrc/routes/web.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/app/Providers/AuthServiceProvider.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/config/app.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/.env" />
@@ -173,10 +221,18 @@
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/MyInfo.vue" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/vendor/tcg/voyager/resources/views/users/edit-add.blade.php" />
-        <option value="$PROJECT_DIR$/DiceGoldSrc/app/User.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/views/vendor/voyager/users/user-edit-add.blade.php" />
-        <option value="$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/UsersController.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/views/vendor/voyager/users/edit-add.blade.php" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/MessagesController.php" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/ChatItem.vue" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_08_10_165332_add_ban_field.php" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/app/User.php" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/app/Http/Kernel.php" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/views/auth/login.blade.php" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/sass/app.scss" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/routes/web.php" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/UsersController.php" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/app/Http/Middleware/CheckBanned.php" />
       </list>
     </option>
   </component>
@@ -339,6 +395,49 @@
               <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
               <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
               <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
+              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Middleware" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
+              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Providers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
+              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
+              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
+              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
+              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -346,30 +445,7 @@
               <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
               <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="lang" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="lang" type="462c0819:PsiDirectoryNode" />
-              <item name="en" type="462c0819:PsiDirectoryNode" />
+              <item name="sass" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
@@ -377,6 +453,14 @@
               <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
+              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
@@ -390,18 +474,7 @@
               <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
               <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
               <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="voyager" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
@@ -465,16 +538,16 @@
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\VPNSnake\Server\DiceGold\DiceGoldSrc\resources\views\vendor\voyager\users" />
+      <recent name="D:\VPNSnake\Server\DiceGold\public_html\images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\VPNSnake\Server\DiceGold\DiceGoldSrc\resources\views" />
       <recent name="D:\VPNSnake\Server\DiceGold\public_html\images" />
       <recent name="D:\VPNSnake\Server\DiceGold\DiceGoldSrc\resources\js\components" />
       <recent name="D:\VPNSnake\Server\DiceGold\public_html\css" />
       <recent name="D:\VPNSnake\Server\DiceGold\public_html\icons" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\VPNSnake\Server\DiceGold\DiceGoldSrc\resources\views\vendor\voyager\users" />
-      <recent name="D:\VPNSnake\Server\DiceGold\public_html\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -537,7 +610,7 @@
       <workItem from="1596553712548" duration="3649000" />
       <workItem from="1596805275386" duration="584000" />
       <workItem from="1596975582805" duration="1203000" />
-      <workItem from="1597057783823" duration="283000" />
+      <workItem from="1597057783823" duration="9280000" />
     </task>
     <task id="LOCAL-00001" summary="Create project and added auth module">
       <created>1590684916118</created>
@@ -665,11 +738,25 @@
       <option name="project" value="LOCAL" />
       <updated>1596204670638</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Admin module added">
+      <created>1597058224395</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1597058224395</updated>
+    </task>
+    <task id="LOCAL-00020" summary="added some missing files">
+      <created>1597058861452</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1597058861452</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="486710000" />
+    <option name="totallyTimeSpent" value="495707000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -682,8 +769,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49828178" visible="true" weight="0.18230277" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49828178" visible="true" weight="0.18230277" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329429" />
@@ -695,16 +783,16 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49892703" visible="true" weight="0.29777777" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49892703" visible="true" weight="0.29777777" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50107294" side_tool="true" weight="0.3293944" />
       <window_info anchor="bottom" id="File Transfer" order="12" weight="0.25" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Structure" order="3" sideWeight="0.5017182" weight="0.15511727" />
+      <window_info anchor="right" id="Structure" order="3" sideWeight="0.5017182" visible="true" weight="0.15511727" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Remote Host" order="5" visible="true" weight="0.18976545" />
+      <window_info anchor="right" id="Remote Host" order="5" weight="0.18976545" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -728,82 +816,11 @@
     <MESSAGE value="1) When you spin the coins (with the roll button), the table data shouldn't be *updated* until the roll animation is done so they're both in sync. Otherwise you can see if you won or lost just by looking at the table data, without waiting for the animation to finish. Just seems like better user experience.&#10;&#10;2) Profit can be negative (if Amount Won is less than Amount Wagered), currently mine shows positive even though I know I am in negative cause I have more losses than wins.&#10;&#10;3) Fix payout to show as &quot;2.0x&quot; (when you win) rather than &quot;2.0 x&quot;. Also, when you lose, in the tables, payout should be 0x, not continuously show 2x, as the payout is 0x since they won nothing.&#10;&#10;4) Show the last few rolled numbers above the roll button, example: https://gyazo.com/de53d18b21b4917dbb0bd64b19b24a54 -- they should be GREEN text when they win and GRAY text when they lose: #778192. Same thing should be done to: .dark span.loss CSS. Think this helps hide or blend in the losses a lot more. The red also looks a little bit weird on our site :)." />
     <MESSAGE value="Emoticon and Avatar have been implemented." />
     <MESSAGE value="Avatar have been implemented.&#10;Before addition of admin module." />
-    <option name="LAST_COMMIT_MESSAGE" value="Avatar have been implemented.&#10;Before addition of admin module." />
+    <MESSAGE value="Admin module added" />
+    <MESSAGE value="added some missing files" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some missing files" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/ChatItem.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/sass/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="340" column="29" selection-start-line="340" selection-start-column="29" selection-end-line="340" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_07_27_174451_added_avatar_field.php" />
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_06_03_184720_create_social_providers_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_06_03_190010_create_social_data_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="17" selection-start-line="17" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_07_30_032110_create_role_permission_table.php" />
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_07_30_032130_create_permissions_table.php" />
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_07_30_031750_create_roles_table.php" />
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/vendor/laravel/framework/src/Illuminate/Foundation/Auth/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-          <folding>
-            <element signature="e#46#82#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/config/permission.php" />
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="106" column="51" selection-start-line="106" selection-start-column="51" selection-end-line="106" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/database/seeds/PermissionsSeeder.php" />
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/config/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1599">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_07_31_025312_create_permission_tables.php" />
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="26" column="66" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-126" />
@@ -816,13 +833,6 @@
           <folding>
             <element signature="e#33#116#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -857,20 +867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Providers/AppServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/MessagesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/config/filesystems.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
@@ -893,16 +889,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/config/voyager-hooks.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="210">
-            <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/config/voyager.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -937,16 +923,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="32" column="78" selection-start-line="32" selection-start-column="64" selection-end-line="32" selection-end-column="78" />
-          <folding>
-            <element signature="e#23#69#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -985,16 +961,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5334">
-          <caret line="266" column="48" selection-start-line="266" selection-start-column="48" selection-end-line="266" selection-end-column="48" />
-          <folding>
-            <element signature="e#42#73#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/lang/en/pagination.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1007,10 +973,172 @@
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/lang/en/validation.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/laravel-echo-server.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-168">
+            <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Chat.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/ChatItem.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/MessagesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="35" column="70" selection-start-line="35" selection-start-column="70" selection-end-line="35" selection-end-column="70" />
+          <folding>
+            <element signature="e#40#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/config/queue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_06_01_195959_added_api_token_field.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="34" selection-start-line="8" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_05_31_175951_added_user_profile_fields.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="15" column="50" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Middleware/RedirectIfAuthenticated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Providers/AppServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Middleware/Authenticate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Middleware/VerifyCsrfToken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/database/migrations/2020_08_10_165332_add_ban_field.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+          <folding>
+            <element signature="e#23#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/vendor/nesbot/carbon/src/Carbon/Carbon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="283" column="3" selection-start-line="283" selection-start-column="3" selection-end-line="283" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="46" column="52" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/views/layouts/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="74" column="63" selection-start-line="74" selection-start-column="63" selection-end-line="74" selection-end-column="63" />
+        <state relative-caret-position="399">
+          <caret line="82" column="83" selection-start-line="82" selection-start-column="71" selection-end-line="82" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/sass/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="34" column="15" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="28" column="83" selection-start-line="28" selection-start-column="83" selection-end-line="28" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="274" column="115" selection-start-line="274" selection-start-column="115" selection-end-line="274" selection-end-column="115" />
+          <folding>
+            <element signature="e#42#73#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/app/Http/Middleware/CheckBanned.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
         </state>
       </provider>
     </entry>

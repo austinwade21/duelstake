@@ -26,6 +26,12 @@ Route::middleware('auth')->get('/user/discord/callback', 'UsersController@discor
 
 Route::middleware('auth')->get('/user/timeout/{username}/{seconds}', 'UsersController@timeout');
 
+Route::middleware('auth')->get('/user/untimeout/{username}', 'UsersController@unban');
+
+Route::middleware('auth')->get('/user/ban/{username}', 'UsersController@ban');
+
+Route::middleware('auth')->get('/user/unban/{username}', 'UsersController@unban');
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

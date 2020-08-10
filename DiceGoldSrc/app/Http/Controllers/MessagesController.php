@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Storage;
 use Mockery\Exception;
 
 class MessagesController extends Controller
@@ -32,6 +33,7 @@ class MessagesController extends Controller
             if($message->sender->hide_user_name){
                 $message->status = false;
             }
+            $message->sender->avatar = Storage::url($message->sender->avatar);
         }
         return response()->json([
             'status' => true,
