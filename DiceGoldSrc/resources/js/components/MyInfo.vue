@@ -128,7 +128,8 @@
         created() {
             axios.get('/api/user', {headers:{'Authorization': 'Bearer ' + window.api_token}}).then(response => {
                 if(response.data){
-                    this.userProfile = response.data;
+                    this.userProfile.avatar = '/storage/' + response.data.avatar;
+                    // this.userProfile = response.data;
                 }
             });
 

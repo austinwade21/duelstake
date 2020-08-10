@@ -20,7 +20,7 @@ use App\SocialData;
  * @property array $social
  * @property string $avatar
  */
-class User extends Authenticatable implements MustVerifyEmail
+class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
 {
     use Notifiable;
 

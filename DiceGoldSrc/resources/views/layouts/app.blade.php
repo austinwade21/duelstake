@@ -80,7 +80,7 @@
                         @else
                             @if(\Illuminate\Support\Facades\Auth::user()->avatar)
                                 <img id="profile-image" class="rounded-circle header-profile-user"
-                                     src="{{\Illuminate\Support\Facades\Auth::user()->avatar}}"
+                                     src="{{Illuminate\Support\Facades\Storage::url(\Illuminate\Support\Facades\Auth::user()->avatar)}}"
                                      alt="Header Avatar">
                             @else
                                 <img id="profile-image" class="rounded-circle header-profile-user"

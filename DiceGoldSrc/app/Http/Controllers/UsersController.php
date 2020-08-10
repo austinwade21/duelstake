@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use TCG\Voyager\Http\Controllers\VoyagerUserController;
 
-class UsersController extends Controller
+class UsersController extends VoyagerUserController
 {
     /**
      * Create a new controller instance.
@@ -227,10 +228,10 @@ class UsersController extends Controller
             $imageType = $matches[1];
             $imageData = base64_decode($matches[2]);
             $image = imagecreatefromstring($imageData);
-            $filename = '/avatars/' . \auth()->id() . '_' . md5($imageData) . '.png';
+            $filename = 'users/' . \auth()->id() . '_' . md5($imageData) . '.png';
 
-            if (imagepng($image, public_path() . '/' . $filename)) {
-                $oldAvatar = public_path() . $user->avatar;
+            if (imagepng($image, storage_path('app/public/'.$filename))) {
+                $oldAvatar = storage_path('app/public/'.$user->avatar);
                 if($oldAvatar == $filename){
                     $result['message'] = 'Same image uploaded.';
                     $result['data'] = ['avatar_url'=>$filename, 'old_avatar'=>$oldAvatar, 'delete_result' => false];
@@ -261,7 +262,7 @@ class UsersController extends Controller
     }
 
     public function timeout(Request $request, string $username, int $seconds){
-        if(Auth::user()->can('timeout users')){
+        if(Auth::user()->hasPermission('timeout_user')){
             $request->session()->flash('message.level', 'success');
             $request->session()->flash('message.content', "User {$username} has been timeout for {$seconds}!");
         }
