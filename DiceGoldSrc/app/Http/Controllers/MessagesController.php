@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Events\MessageSent;
 use App\Message;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -50,6 +51,98 @@ class MessagesController extends Controller
      */
     public function store(Request $request)
     {
+        $userId = $request->input('sender_id');
+        $message = $request->input('message');
+        $words = explode(" ", $message);
+        if(!empty($words)){
+            $commands = ['/ban', '/unban', '/timeout', '/untimeout'];
+            if(in_array($words[0], $commands)){
+                $result = [
+                    'status' => false,
+                    'data' => $message,
+                    'message' => 'Successful query',
+                ];
+                switch($words[0]){
+                    case '/ban':
+                        if(Auth::user()->hasPermission('ban_user')){
+                            if(count($words) < 3){
+                                $result['status'] = false;
+                                $result['message'] = "Missing parameters!\n";
+                                break;
+                            }
+                            $user = User::where('user_name',$words[1]) -> first();
+                            if(empty($user)){
+                                $result['status'] = false;
+                                $result['message'] = "Cannot find user with {$words[1]}!\n";
+                                break;
+                            }
+                            $user->banned_until = '2038-01-01 00:00:00';
+                            $user->save();
+                            $result['status'] = true;
+                            $result['message'] = "User {$words[1]} has been banned successfully!";
+                        }
+                        else{
+                            $result['status'] = false;
+                            $result['message'] = "Permission denied!";
+                        }
+                        break;
+                    case '/timeout':
+                        if(Auth::user()->hasPermission('timeout_user')){
+                            if(count($words) < 3){
+                                $result['status'] = false;
+                                $result['message'] = "Missing parameters!\n";
+                                break;
+                            }
+                            $user = User::where('user_name',$words[1]) -> first();
+                            if(empty($user)){
+                                $result['status'] = false;
+                                $result['message'] = "Cannot find user with {$words[1]}!\n";
+                                break;
+                            }
+                            if(is_numeric($words[2])){
+                                $result['status'] = false;
+                                $result['message'] = "Parameter should be numeric for seconds!\n";
+                                break;
+                            }
+                            $user->banned_until = now()->addSeconds($words[2]);
+                            $user->save();
+                            $result['status'] = true;
+                            $result['message'] = "User {$words[1]} has been timeout for {$words[2]} seconds!";
+                        }
+                        else{
+                            $result['status'] = false;
+                            $result['message'] = "Permission denied!";
+                        }
+                        break;
+                    case '/unban':
+                    case '/untimeout':
+                        if(Auth::user()->hasPermission('ban_user')){
+                            if(count($words) < 2){
+                                $result['status'] = false;
+                                $result['message'] = "Missing parameters!\n";
+                                break;
+                            }
+                            $user = User::where('user_name',$words[1]) -> first();
+                            if(empty($user)){
+                                $result['status'] = false;
+                                $result['message'] = "Cannot find user with {$words[1]}!\n";
+                                break;
+                            }
+                            $user->banned_until = null;
+                            $user->save();
+                            $result['status'] = true;
+                            $result['message'] = "User {$words[1]} has been unbanned successfully!";
+                        }
+                        else{
+                            $result['status'] = false;
+                            $result['message'] = "Permission denied!";
+                        }
+                        break;
+                }
+                return response()->json($result);
+            }
+        }
+
         $message = new Message([
             'user_id'   => $request->input('sender_id'),
             'receiver_id' => $request->input('receiver_id'),

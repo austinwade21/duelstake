@@ -14,25 +14,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index');
-
-Auth::routes(['verify' => true]);
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::middleware('auth')->get('/user/social', 'UsersController@social');
-
-Route::middleware('auth')->get('/user/discord/callback', 'UsersController@discordCallback');
-
-Route::middleware('auth')->get('/user/timeout/{username}/{seconds}', 'UsersController@timeout');
-
-Route::middleware('auth')->get('/user/untimeout/{username}', 'UsersController@unban');
-
-Route::middleware('auth')->get('/user/ban/{username}', 'UsersController@ban');
-
-Route::middleware('auth')->get('/user/unban/{username}', 'UsersController@unban');
-
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::get('/{any}', function () {
+    return view('home');
+})->where('any', '.*');
+
+Auth::routes(['verify' => true]);
+
+//Route::get('/', 'HomeController@index');
+//
+
+//
+//Route::get('/home', 'HomeController@index')->name('home');
+//
+//
+//Route::middleware('auth')->get('/user/social', 'UsersController@social');
+//
+//Route::middleware('auth')->get('/user/discord/callback', 'UsersController@discordCallback');
+//
+//Route::middleware('auth')->get('/user/timeout/{username}/{seconds}', 'UsersController@timeout');
+//
+//Route::middleware('auth')->get('/user/untimeout/{username}', 'UsersController@unban');
+//
+//Route::middleware('auth')->get('/user/ban/{username}', 'UsersController@ban');
+//
+//Route::middleware('auth')->get('/user/unban/{username}', 'UsersController@unban');
+
+

@@ -5,7 +5,13 @@
  */
 // require('./bootstrap');
 
-import App from "./components/App";
+import App from "./App";
+import router from './router';
+import store from './store';
+import axios from "axios";
+
+axios.defaults.withCredentials = true;
+axios.defaults.baseURL = 'https://dicegold.com/';
 
 window.Vue = require('vue');
 
@@ -19,8 +25,6 @@ window.Vue = require('vue');
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -45,9 +49,19 @@ Vue.filter("toLocalTimeString", function (value) {
 
 export const EventBus = new Vue();
 
-const app = new Vue({
-    el: '#app',
-    components: { App },
-    render: h => h(App)
+store.dispatch('auth/me').then(() => {
+    new Vue({
+        router,
+        store,
+        render: h => h(App)
+    }).$mount('#app')
 });
+
+// const app = new Vue({
+//     router,
+//     store,
+//     el: '#app',
+//     components: { App },
+//     render: h => h(App)
+// });
 

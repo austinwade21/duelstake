@@ -69,7 +69,8 @@ DiceGold is a web application for dice game
 
 ## Issues
 - compoer memory overflow error <br>
-`php -d memory_limit=-1 "/opt/cpanel/composer/bin/composer" require predis/predis`
+linux: `php -d memory_limit=-1 "/opt/cpanel/composer/bin/composer" require predis/predis` <br>
+windows: `php -d memory_limit=-1 "C:/ProgramData/ComposerSetup/bin/composer.phar" require laravel/sanctum`
 - Open redis and laravel echo server port
   - install ConfigServer Firewall plugin to WHM <br>
      `cd /usr/src`<br>
