@@ -1,11 +1,11 @@
 <template>
     <div id="right-header">
         <div class="right-header" v-if="!authenticated">
-            <div class="menu-login" @click="showLogIn = true">
+            <div class="menu-login" @click="showLogin">
                 Login
             </div>
 
-            <div class="btn btn-primary menu-register">Register</div>
+            <div class="btn btn-primary menu-register" @click="showRegister">Register</div>
             <div class="icon-button" href="#" id="chat-switcher"><i
                     class="fas fa-comments align-middle"></i></div>
 
@@ -66,7 +66,7 @@
                     class="fas fa-comments align-middle"></i></div>
 
         </div>
-        <LogIn v-if="showLogIn" @close="closeLogIn"></LogIn>
+        <LogIn v-if="isShowLogIn" @close="closeLogIn" @register="showRegister"></LogIn>
     </div>
 </template>
 
@@ -95,13 +95,24 @@
             },
 
             closeLogIn() {
-                this.showLogIn = false;
+                this.isShowLogIn = false;
+            },
+
+            showLogin(){
+                this.isShowRegister = false;
+                this.isShowLogIn = true;
+            },
+
+            showRegister() {
+                this.isShowRegister = true;
+                this.isShowLogIn = false;
             },
         },
 
         data() {
             return {
-                showLogIn: false,
+                isShowLogIn: false,
+                isShowRegister: false,
             }
         },
     }

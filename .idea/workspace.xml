@@ -2,31 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a922c752-ec18-452c-933e-8ad08e91900c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DiceGoldSrc/config/sanctum.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiceGoldSrc/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Header.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/RightHeader.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/store/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/store/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/views/Home.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/views/LogIn.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/images/login_background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/WelcomeArea.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/MessagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/MessagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/config/cors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/RightHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/RightHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/resources/js/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiceGoldSrc/resources/js/views/LogIn.vue" beforeDir="false" afterPath="$PROJECT_DIR$/DiceGoldSrc/resources/js/views/LogIn.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,11 +23,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="6" selection-start-line="6" selection-end-line="7" />
-              <folding>
-                <element signature="e#532#577#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -55,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+            <state relative-caret-position="546">
+              <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -67,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Header.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="81" selection-start-line="77" selection-end-line="81" />
+            <state relative-caret-position="357">
+              <caret line="47" column="28" lean-forward="true" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -76,64 +53,72 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/RightHeader.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="68" column="12" lean-forward="true" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
+            <state relative-caret-position="357">
+              <caret line="68" column="63" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/views/Home.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1785">
+              <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
               <folding>
-                <element signature="e#3889#3933#0" expanded="true" />
+                <element signature="e#3198#3224#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/views/LogIn.vue">
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/WelcomeArea.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="195" column="8" selection-start-line="195" selection-start-column="8" selection-end-line="195" selection-end-column="8" />
+            <state relative-caret-position="21">
+              <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/App.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="795">
+              <caret line="88" selection-start-line="58" selection-end-line="88" />
               <folding>
-                <element signature="e#531#556#0" expanded="true" />
+                <element signature="n#div#0;n#template#0;n#!!top" />
+                <element signature="e#3148#3197#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Game.vue">
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Chat.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="101" selection-start-line="101" selection-end-line="111" selection-end-column="46" />
+            <state relative-caret-position="608">
+              <caret line="79" column="28" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/images/login_background.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/store/auth.js">
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/ChatItem.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+            <state relative-caret-position="609">
+              <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/routes/web.php">
+        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/views/LogIn.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/views/home.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="899">
-              <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+            <state relative-caret-position="1113">
+              <caret line="65" column="104" selection-start-line="65" selection-start-column="104" selection-end-line="65" selection-end-column="104" />
+              <folding>
+                <element signature="e#3396#3402#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -199,7 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Game.vue" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/app/Bet.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/app/Http/Controllers/BetController.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/app/Http/Middleware/LastUserActivity.php" />
@@ -237,7 +221,6 @@
         <option value="$PROJECT_DIR$/DiceGoldSrc/.env" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/config/cors.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/routes/api.php" />
-        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/views/Home.vue" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/store/index.js" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/app.js" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/App.vue" />
@@ -247,9 +230,11 @@
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/views/SignIn.vue" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/router.js" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/store/auth.js" />
-        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/RightHeader.vue" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/routes/web.php" />
         <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/views/LogIn.vue" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/RightHeader.vue" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/views/Home.vue" />
+        <option value="$PROJECT_DIR$/DiceGoldSrc/resources/js/components/WelcomeArea.vue" />
       </list>
     </option>
   </component>
@@ -374,6 +359,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -391,64 +377,6 @@
               <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
               <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Middleware" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Providers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
@@ -476,58 +404,23 @@
               <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
               <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
+              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
+              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="sass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiceGold" type="462c0819:PsiDirectoryNode" />
-              <item name="DiceGoldSrc" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DiceGold" type="b2602c69:ProjectViewProjectNode" />
@@ -550,7 +443,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -642,7 +534,8 @@
       <workItem from="1596975582805" duration="1203000" />
       <workItem from="1597057783823" duration="9357000" />
       <workItem from="1597164894414" duration="2948000" />
-      <workItem from="1597278848500" duration="26946000" />
+      <workItem from="1597278848500" duration="28860000" />
+      <workItem from="1597596899081" duration="12542000" />
     </task>
     <task id="LOCAL-00001" summary="Create project and added auth module">
       <created>1590684916118</created>
@@ -791,11 +684,18 @@
       <option name="project" value="LOCAL" />
       <updated>1597085407335</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Restructured for fully using VueJS SPA">
+      <created>1597456886100</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1597456886100</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="525678000" />
+    <option name="totallyTimeSpent" value="540134000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -810,7 +710,7 @@
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49828178" visible="true" weight="0.18656716" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49828178" visible="true" weight="0.15031983" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329429" />
@@ -822,14 +722,14 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49892703" visible="true" weight="0.29777777" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49892703" weight="0.22555555" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50107294" side_tool="true" weight="0.3293944" />
-      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.25" />
+      <window_info anchor="bottom" id="File Transfer" order="12" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Structure" order="3" sideWeight="0.5017182" visible="true" weight="0.15511727" />
+      <window_info anchor="right" id="Structure" order="3" sideWeight="0.5017182" visible="true" weight="0.12313433" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Remote Host" order="5" weight="0.18976545" />
     </layout>
@@ -858,16 +758,10 @@
     <MESSAGE value="Admin module added" />
     <MESSAGE value="added some missing files" />
     <MESSAGE value="Ban, Timeout features have been implemented." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ban, Timeout features have been implemented." />
+    <MESSAGE value="Restructured for fully using VueJS SPA" />
+    <option name="LAST_COMMIT_MESSAGE" value="Restructured for fully using VueJS SPA" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/vendor/tcg/voyager/src/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="83" column="40" lean-forward="true" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/lang/en/pagination.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -882,13 +776,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/laravel-echo-server.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/ChatItem.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/config/queue.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -946,13 +833,6 @@
           <folding>
             <element signature="e#42#73#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Chat.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1617">
-          <caret line="79" column="28" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1076,9 +956,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/App.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -1093,16 +970,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/store/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1130,68 +997,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/views/Home.vue">
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        <state relative-caret-position="462">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="899">
+        <state relative-caret-position="903">
           <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/App.vue">
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/store/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="6" selection-start-line="6" selection-end-line="7" />
-          <folding>
-            <element signature="e#532#577#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Header.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="81" selection-start-line="77" selection-end-line="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/RightHeader.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="68" column="12" lean-forward="true" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
-          <folding>
-            <element signature="e#3889#3933#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="21">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/store/auth.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="252">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1200,18 +1030,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Game.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="101" selection-start-line="101" selection-end-line="111" selection-end-column="46" />
+        <state relative-caret-position="-2541">
+          <caret line="101" column="54" selection-start-line="101" selection-start-column="54" selection-end-line="101" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Chat.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="79" column="28" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/ChatItem.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/Header.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="47" column="28" lean-forward="true" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/views/LogIn.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="195" column="8" selection-start-line="195" selection-start-column="8" selection-end-line="195" selection-end-column="8" />
+        <state relative-caret-position="1113">
+          <caret line="65" column="104" selection-start-line="65" selection-start-column="104" selection-end-line="65" selection-end-column="104" />
           <folding>
-            <element signature="e#531#556#0" expanded="true" />
+            <element signature="e#3396#3402#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/RightHeader.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="68" column="63" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="88" selection-start-line="58" selection-end-line="88" />
+          <folding>
+            <element signature="n#div#0;n#template#0;n#!!top" />
+            <element signature="e#3148#3197#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/views/Home.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+          <folding>
+            <element signature="e#3198#3224#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DiceGoldSrc/resources/js/components/WelcomeArea.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
         </state>
       </provider>
     </entry>
