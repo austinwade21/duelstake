@@ -1,27 +1,30 @@
 <template>
-    <div id="app">
-        <Header></Header>
-        <div id="nav">
-            <router-link to="/">Home</router-link> |
-            <template v-if="!authenticated">
-                <router-link to="/signin">Sign in</router-link> |
-            </template>
-            <template v-else>
-                <router-link to="/account">{{ user.user_name }}</router-link> |
-                <a href="#" @click.prevent="signOut">Sign out</a>
-            </template>
+    <div id="app" class="row">
+        <div class="flex-column col-lg-9 col-md-12">
+            <Header></Header>
+            <router-view/>
+            <Footer></Footer>
         </div>
-        <router-view/>
+        <div class="flex-column chat col-lg-3 col-md-12">
+            <chat></chat>
+        </div>
+
     </div>
 </template>
 
 <script>
     import { mapGetters, mapActions } from 'vuex'
     import Header from "./components/Header";
+    import Footer from "./components/Footer";
+    import Chat from "./components/Chat";
 
     export default {
         name: "App",
-        components: {Header},
+        components: {
+            Footer,
+            Header,
+            Chat,
+        },
         computed: {
             ...mapGetters({
                 authenticated: 'auth/authenticated',
