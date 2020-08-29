@@ -1,7 +1,33 @@
 <template>
     <div class="footer">
         <div class="row footer-top">
-
+            <div class="footer-top-item">
+                <img src="/images/brand1.svg">
+            </div>
+            <div class="footer-top-item">
+                <img src="/images/brand2.svg">
+            </div>
+            <div class="footer-top-item">
+                <img src="/images/brand3.svg">
+            </div>
+            <div class="footer-top-item">
+                <img src="/images/brand4.svg">
+            </div>
+            <div class="footer-top-item">
+                <img src="/images/brand5.svg">
+            </div>
+            <div class="footer-top-item">
+                <img src="/images/brand6.svg">
+            </div>
+            <div class="footer-top-item">
+                <img src="/images/brand7.svg">
+            </div>
+            <div class="footer-top-item">
+                <img src="/images/brand8.svg">
+            </div>
+            <div class="footer-top-item">
+                <img src="/images/brand9.svg">
+            </div>
         </div>
         <div class="row footer-middle">
             <div class="col-md-4">
@@ -105,10 +131,22 @@
         height: 100px;
         background: #212635;
         padding: 20px 140px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+    .footer-top-item{
+        margin-left: 0;
+        margin-right: 0;
+        /*height: 100%;*/
+        /*align-items: center;*/
+    }
+    .footer-top-item > img{
+        /*height: 50%;*/
     }
     .footer-middle{
         height: 264px;
-        padding: 60px 0px;
+        padding: 60px 0;
     }
     .footer-bottom{
         height: 64px;
