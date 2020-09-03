@@ -11,7 +11,7 @@ import store from './store';
 import axios from "axios";
 
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = 'https://dicegold.com/';
+axios.defaults.baseURL = 'https://duelstake.com/';
 
 window.Vue = require('vue');
 

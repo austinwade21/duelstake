@@ -36,6 +36,13 @@ export default {
             return dispatch('me')
         },
 
+        async register ({ dispatch }, credentials) {
+            await axios.get('/sanctum/csrf-cookie');
+            await axios.post('/register', credentials);
+
+            return dispatch('me')
+        },
+
         async logOut ({ dispatch }) {
             await axios.post('/logout');
 

@@ -67,7 +67,7 @@ return [
 
         'icons' => [
             'driver' => 'local',
-            'root' => storage_path('app/public_html/icons'),
+            'root' => storage_path('app/public/icons'),
             'url' => env('APP_URL').'/icons',
             'visibility' => 'public',
         ],

@@ -5,7 +5,23 @@
                 <div class="modal-content">
                     <form action="#" @submit.prevent="submit">
                         <div class="title">
-                            LOGIN
+                            SIGN UP
+                        </div>
+                        <div class="form-group">
+                            <div class="form-label">
+                                <label for="email">Username</label>
+                            </div>
+                            <div class="form-input">
+                                <span class="input-icon">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                                <input id="user_name"
+                                       name="user_name"
+                                       class="form-control"
+                                       placeholder="enter username"
+                                       v-model="form.user_name"
+                                />
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="form-label">
@@ -40,9 +56,16 @@
                                 />
                             </div>
                         </div>
+                        <div class="terms-checkbox form-group">
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" v-model="checkedTerm" class="custom-control-input" id="terms-check">
+                                <label class="custom-control-label" for="terms-check">I confirm that I am 18 years old and I have read the <span class="term">Terms of Service</span></label>
+                            </div>
+                        </div>
+
                         <div class="form-group form-button">
                             <button class="btn btn-primary full-width" type="submit">
-                                Sign in
+                                Create Account
                             </button>
                         </div>
                         <div class="social-label">
@@ -63,7 +86,7 @@
                         </div>
                         <div class="sign-up-block">
                             <span class="sign-up-text">
-                                Don't have Account? &nbsp;<a class="sign-up-link" @click.self="$emit('register')">Sign up</a>
+                                Do you have an account? &nbsp;<a class="sign-up-link" @click.self="$emit('register')">Log In</a>
                             </span>
                         </div>
                     </form>
@@ -79,28 +102,34 @@
     import {mapActions} from 'vuex'
 
     export default {
-        name: 'LogIn',
+        name: 'Register',
 
         data() {
             return {
                 form: {
+                    user_name: '',
                     email: '',
                     password: '',
+                    password_confirmation: '',
                 },
-                width: 840,
-                height: 560,
+                checkedTerm: false,
+                width: 860,
+                height: 703,
             }
         },
 
         methods: {
             ...mapActions({
-                logIn: 'auth/logIn'
+                register: 'auth/register'
             }),
 
             async submit() {
-                await this.logIn(this.form);
+                if(!this.checkedTerm){
+                    return;
+                }
+                this.form.password_confirmation = this.form.password;
+                await this.register(this.form);
 
-                this.$router.replace({name: 'home'});
                 this.$emit('close');
             }
         }
@@ -144,7 +173,8 @@
             background-image: url('/images/login_background.jpg');
             background-position-x: 100px;
             background-repeat: no-repeat;
-
+            -webkit-background-size: cover;
+            background-size: cover;
         }
 
         &-content:after{

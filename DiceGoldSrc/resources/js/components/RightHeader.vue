@@ -6,7 +6,7 @@
             </div>
 
             <div class="btn btn-primary menu-register" @click="showRegister">Register</div>
-            <div class="icon-button" href="#" id="chat-switcher"><i
+            <div class="icon-button" href="#" id="chat-switcher" @click="setChatOpen()"><i
                     class="fas fa-comments align-middle"></i></div>
 
         </div>
@@ -42,7 +42,7 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img id="profile-image" class="rounded-circle header-profile-user"
                          :src="'/storage/' + user.avatar"
-                         alt="Header Avatar">
+                         alt="HA">
                     <span class="d-none d-xl-inline-block ml-2 mr-2">{{user.user_name}}
                             </span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
@@ -62,21 +62,23 @@
             </div>
             <div class="icon-button" href="#" id="view-notification"><i
                     class="fas fa-bell align-middle"></i></div>
-            <div class="icon-button" href="#" id="chat-switcher"><i
+            <div class="icon-button" href="#" id="chat-switcher" @click="setChatOpen()"><i
                     class="fas fa-comments align-middle"></i></div>
 
         </div>
-        <LogIn v-if="isShowLogIn" @close="closeLogIn" @register="showRegister"></LogIn>
+        <LogIn v-show="isShowLogIn" @close="closeLogIn" @register="showRegister"></LogIn>
+        <Register v-show="isShowRegister" @close="closeRegister" @login="showLogin"></Register>
     </div>
 </template>
 
 <script>
     import {mapActions, mapGetters} from "vuex";
-    import LogIn from "../views/LogIn";
+    import LogIn from "./Forms/LogIn";
+    import Register from "./Forms/Register";
 
     export default {
         name: "RightHeader",
-        components: {LogIn},
+        components: {Register, LogIn},
         computed: {
             ...mapGetters({
                 authenticated: 'auth/authenticated',
@@ -85,17 +87,22 @@
         },
         methods: {
             ...mapActions({
-                logOutAction: 'auth/logOut'
+                logOutAction: 'auth/logOut',
+                setChatOpen: 'ui/setChatOpen',
             }),
 
             async signOut () {
                 await this.logOutAction();
 
-                this.$router.replace({ name: 'home' })
+                this.$router.replace({ name: 'Home' })
             },
 
             closeLogIn() {
                 this.isShowLogIn = false;
+            },
+
+            closeRegister(){
+                this.isShowRegister = false;
             },
 
             showLogin(){

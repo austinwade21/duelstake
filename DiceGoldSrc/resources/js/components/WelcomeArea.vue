@@ -146,7 +146,9 @@
         display:inline-block;
         background: linear-gradient(93.08deg, #1D222E -16.47%, rgba(29, 34, 46, 0) 65.3%);
     }
-
+    .VueCarousel-slide{
+        display: contents;
+    }
     .welcome-btc{
         font-size: 36px;
         line-height: 36px;

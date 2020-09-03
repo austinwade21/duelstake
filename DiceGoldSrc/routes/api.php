@@ -27,7 +27,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 | Method:         POST
 | Description:    Updates the authenticated user's password
 */
-Route::middleware('auth:api')->post('/user/changePassword', 'UsersController@changePassword');
+Route::middleware('auth:sanctum')->post('/user/changePassword', 'UsersController@changePassword');
 
 /*
 |-------------------------------------------------------------------------------
@@ -38,7 +38,7 @@ Route::middleware('auth:api')->post('/user/changePassword', 'UsersController@cha
 | Method:         POST
 | Description:    Updates the authenticated user's email
 */
-Route::middleware('auth:api')->post('/user/changeEmail','UsersController@changeEmail');
+Route::middleware('auth:sanctum')->post('/user/changeEmail','UsersController@changeEmail');
 
 /*
 |-------------------------------------------------------------------------------
@@ -49,7 +49,7 @@ Route::middleware('auth:api')->post('/user/changeEmail','UsersController@changeE
 | Method:         POST
 | Description:    Updates the authenticated user's Hide My User Name
 */
-Route::middleware('auth:api')->post('/user/setHideUserName','UsersController@setHideUserName');
+Route::middleware('auth:sanctum')->post('/user/setHideUserName','UsersController@setHideUserName');
 
 /*
 |-------------------------------------------------------------------------------
@@ -60,7 +60,7 @@ Route::middleware('auth:api')->post('/user/setHideUserName','UsersController@set
 | Method:         POST
 | Description:    Unlink Social account
 */
-Route::middleware('auth:api')->post('/user/social/unlink', 'UsersController@socialUnlink');
+Route::middleware('auth:sanctum')->post('/user/social/unlink', 'UsersController@socialUnlink');
 
 /*
 |-------------------------------------------------------------------------------
@@ -71,7 +71,7 @@ Route::middleware('auth:api')->post('/user/social/unlink', 'UsersController@soci
 | Method:         POST
 | Description:    Store Bet data
 */
-Route::middleware('auth:api')->post('/bet/store', 'BetController@store');
+Route::middleware('auth:sanctum')->post('/bet/store', 'BetController@store');
 
 /*
 |-------------------------------------------------------------------------------
@@ -82,7 +82,7 @@ Route::middleware('auth:api')->post('/bet/store', 'BetController@store');
 | Method:         GET
 | Description:    List Bet History
 */
-Route::middleware('auth:api')->get('/bet/index', 'BetController@index');
+Route::middleware('auth:sanctum')->get('/bet/index', 'BetController@index');
 
 /*
 |-------------------------------------------------------------------------------
@@ -93,7 +93,7 @@ Route::middleware('auth:api')->get('/bet/index', 'BetController@index');
 | Method:         GET
 | Description:    Get Betting Statistics
 */
-Route::middleware('auth:api')->get('/bet/statistics', 'BetController@statistics');
+Route::middleware('auth:sanctum')->get('/bet/statistics', 'BetController@statistics');
 
 /*
 |-------------------------------------------------------------------------------
@@ -104,7 +104,7 @@ Route::middleware('auth:api')->get('/bet/statistics', 'BetController@statistics'
 | Method:         GET
 | Description:    Get Public Messages
 */
-Route::middleware('auth:api')->get('/messages/{startId}', 'MessagesController@index');
+Route::get('/messages/{startId}', 'MessagesController@index');
 
 /*
 |-------------------------------------------------------------------------------
@@ -115,7 +115,7 @@ Route::middleware('auth:api')->get('/messages/{startId}', 'MessagesController@in
 | Method:         POST
 | Description:    Send a new message
 */
-Route::middleware('auth:api')->post('/messages/send', 'MessagesController@store');
+Route::middleware('auth:sanctum')->post('/messages/send', 'MessagesController@store');
 
 /*
 |-------------------------------------------------------------------------------
@@ -126,4 +126,4 @@ Route::middleware('auth:api')->post('/messages/send', 'MessagesController@store'
 | Method:         POST
 | Description:    Save profile image
 */
-Route::middleware('auth:api')->post('/user/avatar/save', 'UsersController@saveAvatar');
+Route::middleware('auth:sanctum')->post('/user/avatar/save', 'UsersController@saveAvatar');

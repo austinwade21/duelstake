@@ -15,6 +15,13 @@ DiceGold is a web application for dice game
 - Configure database
     - rename '.env.example' to '.env' at DiceGold directory.
     - configure database host, port, database, username, password etc.
+- Install admin panel <br>
+    It requires PHP 7.3 + <br>
+    `php artisan voyager:install` <br>
+    to assign admin privileges to an existing user <br>
+    `php artisan voyager:admin your@email.com` <br>
+    to create a new admin user <br>
+    `php artisan voyager:admin your@email.com --create`
 - Migrate database <br>
     `php artisan migrate` <br>
     To migrate specific file <br>

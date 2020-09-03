@@ -21,13 +21,13 @@
     </span>
 
     <input type="text"
-      ref="input"
-      class="form-control message-input"
-      rows="1"
-      v-model="value"
+           ref="input"
+           class="form-control message-input"
+           rows="1"
+           v-model="valueD"
            v-on:keyup.enter="emitEnterKey"
-      @input="$emit('input', $event.target.value)"
-    ></input>
+           @input="$emit('input', $event.target.value)"
+    />
   </div>
 </template>
 
@@ -40,6 +40,17 @@ export default {
     value: {
       type: String,
       default: ''
+    }
+  },
+
+  computed: {
+    valueD: {
+      get: function () {
+        return this.value;
+      },
+      set: function (newValue) {
+        // this.value = newValue;
+      }
     }
   },
 

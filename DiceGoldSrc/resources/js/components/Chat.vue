@@ -38,12 +38,20 @@
 </template>
 
 <script>
+    import {mapGetters} from "vuex";
+
     import InfiniteLoading from 'vue-infinite-loading';
     import ChatItem from "./ChatItem";
     import TextareaEmojiPicker from "./TextareaEmojiPicker";
     export default {
         name: "Chat",
         components: {TextareaEmojiPicker, ChatItem, InfiniteLoading},
+        computed: {
+            ...mapGetters({
+                authenticated: 'auth/authenticated',
+                user: 'auth/user',
+            })
+        },
         data() {
             return {
                 publicMessages:[
@@ -68,11 +76,15 @@
         watch:{
         },
         methods: {
-            sendMessage() {
+            async sendMessage() {
                 if(this.newMessage !== null && this.newMessage !== ''){
+                    if(!this.authenticated){
+                        alert("You have to login!");
+                        return;
+                    }
+                    await axios.get('/sanctum/csrf-cookie');
                     axios.post('api/messages/send', {
-                        'api_token': window.api_token,
-                        'sender_id': window.userid,
+                        'sender_id': this.user.id,
                         'receiver_id': null,
                         'message': this.newMessage,
                         'is_public': true,

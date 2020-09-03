@@ -34,7 +34,12 @@ class MessagesController extends Controller
             if($message->sender->hide_user_name){
                 $message->status = false;
             }
-            $message->sender->avatar = Storage::url($message->sender->avatar);
+            if(!empty($message->sender) && !empty($message->sender->avatar) && substr($message->sender->avatar, 0, 1) != "/") {
+                $message->sender->avatar = Storage::url($message->sender->avatar);
+            }
+            if(!empty($message->receiver) && !empty($message->receiver->avatar) && substr($message->receiver->avatar, 0, 1) != "/") {
+                $message->receiver->avatar = Storage::url($message->receiver->avatar);
+            }
         }
         return response()->json([
             'status' => true,
@@ -160,6 +165,12 @@ class MessagesController extends Controller
             $message->status = true;
             if($message->sender->hide_user_name){
                 $message->status = false;
+            }
+            if(!empty($message->sender) && !empty($message->sender->avatar && substr($message->sender->avatar, 0, 1) != "/")) {
+                $message->sender->avatar = Storage::url($message->sender->avatar);
+            }
+            if(!empty($message->receiver) && !empty($message->receiver->avatar && substr($message->receiver->avatar, 0, 1) != "/")) {
+                $message->receiver->avatar = Storage::url($message->receiver->avatar);
             }
 
             broadcast(new MessageSent($message));

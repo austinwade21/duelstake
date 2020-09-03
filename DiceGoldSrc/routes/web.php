@@ -20,7 +20,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/{any}', function () {
     return view('home');
-})->where('any', '.*');
+})->where('any', '^((?!admin|api|storage).)*');
 
 Auth::routes(['verify' => true]);
 
